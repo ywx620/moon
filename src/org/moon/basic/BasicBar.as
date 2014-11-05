@@ -14,6 +14,8 @@ package org.moon.basic
 		protected var buttons:Vector.<BasicButton>=new Vector.<BasicButton>;
 		protected var _gad:int=5;
 		protected var modelType:String="";
+		protected var _barIndex:int;
+		protected var _data:Array;
 		public function BasicBar()
 		{
 			_width=80;
@@ -61,6 +63,34 @@ package org.moon.basic
 				buttons=null;
 			}
 			super.dispose();
+		}
+
+		/**单个选中的值*/
+		public function get barIndex():int
+		{
+			return _barIndex;
+		}
+
+		/**
+		 * @private
+		 */
+		public function set barIndex(value:int):void
+		{
+			_barIndex = value;
+		}
+
+		/**类型["list1","list2","list3","list4"]*/
+		public function get data():Array
+		{
+			return _data;
+		}
+		
+		/**
+		 * @private
+		 */
+		public function set data(value:Array):void
+		{
+			_data = value;
 		}
 	}
 }

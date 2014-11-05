@@ -23,12 +23,12 @@ package org.moon
 		public static const COLOR_TIPS_BG:uint=0XCCCCCC;
 		public function MoonTheme()
 		{
-			//button
+			//button 按钮
 			NameList.add(MoonConst.MODEL_BUTTON,MoonConst.BUTTON_OVER,	BasicUI.getBitmapData(BasicUI.getRoundRect(80,30,COLOR_BUTTON_OVER)));
 			NameList.add(MoonConst.MODEL_BUTTON,MoonConst.BUTTON_UP,	BasicUI.getBitmapData(BasicUI.getRoundRect(80,30,COLOR_BUTTON_UP)));
 			NameList.add(MoonConst.MODEL_BUTTON,MoonConst.BUTTON_DOWN,	BasicUI.getBitmapData(BasicUI.getRoundRect(80,30,COLOR_BUTTON_DOWN)));
 
-			//scroll
+			//scroll 滚动条
 			NameList.add(MoonConst.MODEL_SCROLL,MoonConst.SCROLL_UP_OVER,	BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_SCROLL_UP_OVER)));
 			NameList.add(MoonConst.MODEL_SCROLL,MoonConst.SCROLL_UP_DOWN,	BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_SCROLL_UP_DOWN)));
 			NameList.add(MoonConst.MODEL_SCROLL,MoonConst.SCROLL_UP_UP,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_SCROLL_UP_UP)));
@@ -43,7 +43,7 @@ package org.moon
 			NameList.add(MoonConst.MODEL_SCROLL,MoonConst.SCROLL_DOWN_DOWN,	BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_SCROLL_UP_DOWN,0,180)));
 			NameList.add(MoonConst.MODEL_SCROLL,MoonConst.SCROLL_DOWN_UP,	BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_SCROLL_UP_UP,0,180)));
 			
-			//page
+			//page 页码
 			NameList.add(MoonConst.MODEL_PAGE,MoonConst.PAGE_UP_OVER,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_BUTTON_OVER,0,-90)));
 			NameList.add(MoonConst.MODEL_PAGE,MoonConst.PAGE_UP_UP,			BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_BUTTON_UP,0,-90)));
 			NameList.add(MoonConst.MODEL_PAGE,MoonConst.PAGE_UP_DOWN,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_BUTTON_DOWN,0,-90)));
@@ -52,10 +52,10 @@ package org.moon
 			NameList.add(MoonConst.MODEL_PAGE,MoonConst.PAGE_DOWN_DOWN,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(18,18,COLOR_BUTTON_DOWN,0,90)));
 			NameList.add(MoonConst.MODEL_PAGE,MoonConst.PAGE_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(50,18,COLOR_BUTTON_DOWN)));
 			
-			//tips
+			//tips 提示
 			NameList.add(MoonConst.MODEL_TIPS,MoonConst.TIPS_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(20,20,COLOR_TIPS_BG)));
 			
-			//warn
+			//warn 提醒框
 			NameList.add(MoonConst.MODEL_WARN,MoonConst.WARN_CANCEL_OVER,		BasicUI.getBitmapData(BasicUI.getRoundRectText(80,30,COLOR_BUTTON_OVER,"取消")));
 			NameList.add(MoonConst.MODEL_WARN,MoonConst.WARN_CANCEL_UP,			BasicUI.getBitmapData(BasicUI.getRoundRectText(80,30,COLOR_BUTTON_UP,"取消")));
 			NameList.add(MoonConst.MODEL_WARN,MoonConst.WARN_CANCEL_DOWN,		BasicUI.getBitmapData(BasicUI.getRoundRectText(80,30,COLOR_BUTTON_DOWN,"取消")));
@@ -64,13 +64,13 @@ package org.moon
 			NameList.add(MoonConst.MODEL_WARN,MoonConst.WARN_SURE_DOWN,			BasicUI.getBitmapData(BasicUI.getRoundRectText(80,30,COLOR_BUTTON_DOWN,"确定")));
 			NameList.add(MoonConst.MODEL_WARN,MoonConst.WARN_BACKGROUND,		BasicUI.getBitmapData(BasicUI.getRoundRect(20,20,COLOR_TIPS_BG)));
 			
-			//list
+			//list 列表
 			NameList.add(MoonConst.MODEL_LIST,MoonConst.LIST_OPEN_OVER,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(20,20,COLOR_SCROLL_UP_OVER,0,-90)));
 			NameList.add(MoonConst.MODEL_LIST,MoonConst.LIST_OPEN_DOWN,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(20,20,COLOR_SCROLL_UP_DOWN,0,-90)));
 			NameList.add(MoonConst.MODEL_LIST,MoonConst.LIST_OPEN_UP,		BasicUI.getBitmapData(BasicUI.getArrowRoundRect(20,20,COLOR_SCROLL_UP_UP,0,-90)));
 			NameList.add(MoonConst.MODEL_LIST,MoonConst.LIST_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(120,20,COLOR_TIPS_BG)));
 			
-			//page
+			//number 数字
 			NameList.add(MoonConst.MODEL_NUMBER,MoonConst.NUMBER_UP_OVER,		BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,COLOR_BUTTON_OVER)));
 			NameList.add(MoonConst.MODEL_NUMBER,MoonConst.NUMBER_UP_UP,			BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,COLOR_BUTTON_UP)));
 			NameList.add(MoonConst.MODEL_NUMBER,MoonConst.NUMBER_UP_DOWN,		BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,COLOR_BUTTON_DOWN)));
@@ -79,14 +79,17 @@ package org.moon
 			NameList.add(MoonConst.MODEL_NUMBER,MoonConst.NUMBER_DOWN_DOWN,		BasicUI.getBitmapData(BasicUI.getAddRoundRect(18,18,COLOR_BUTTON_DOWN)));
 			NameList.add(MoonConst.MODEL_NUMBER,MoonConst.NUMBER_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(50,18,COLOR_BUTTON_DOWN)));
 			
-			//progress
+			//progress 进度条
 			NameList.add(MoonConst.MODEL_PROGRESS,MoonConst.PROGRESS_BAR,			BasicUI.getBitmapData(BasicUI.getRoundRect(100,18,COLOR_BUTTON_UP)));
 			NameList.add(MoonConst.MODEL_PROGRESS,MoonConst.PROGRESS_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(100,18,COLOR_TIPS_BG)));
 			
-			//checkbox
-			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT,	BasicUI.getBitmapData(BasicUI.getRect(20,20,COLOR_BUTTON_OVER)));
-			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_SELECT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER)));
+			//checkbox 复选框
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,0)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_SELECT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,1)));
 			
+			//单选框
+			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_DEFAULT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,0)));
+			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_SELECT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,1)));
 		}
 	}
 }

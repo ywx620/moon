@@ -15,17 +15,23 @@ package org.moon
 	public class CheckBox extends BasicButton
 	{
 		protected var _index:int=0;
+		protected var myTypeDefault:String;
+		protected var myTypeSelect:String;
+		protected var myModel:String;
 		public function CheckBox()
 		{
+			myTypeDefault=MoonConst.CHECKBOX_DEFAULT;
+			myTypeSelect=MoonConst.CHECKBOX_SELECT;
+			myModel=MoonConst.MODEL_CHECKBOX;
 			super();
 		}
 		/**设置皮肤*/
 		override public function setSkin(type:String, skin:Object,param:Object=null):void
 		{
-			if(type==MoonConst.CHECKBOX_DEFAULT){
+			if(type==myTypeDefault){
 				dataSkin[MoonConst.BUTTON_UP]=new Scale9Image(skin.clone());
 				if(index==0)	currentStatc=MoonConst.BUTTON_UP;
-			}else if(type==MoonConst.CHECKBOX_SELECT){
+			}else if(type==myTypeSelect){
 				dataSkin[MoonConst.BUTTON_DOWN]=new Scale9Image(skin.clone());
 				if(index==1)	currentStatc=MoonConst.BUTTON_DOWN;
 			}
@@ -35,7 +41,7 @@ package org.moon
 		override protected function render():void
 		{
 			for(var model:String in NameList.list){
-				if(model==MoonConst.MODEL_CHECKBOX){
+				if(model==myModel){
 					for(var type:String in NameList.list[model]){
 						setSkin(type,NameList.list[model][type],NameList.param[model][type]);
 					}
@@ -43,7 +49,7 @@ package org.moon
 				}
 			}
 		}
-		private function setStatc():void
+		public function setStatc():void
 		{
 			if(_index==0)	currentStatc=MoonConst.BUTTON_UP;
 			else			currentStatc=MoonConst.BUTTON_DOWN;

@@ -25,7 +25,6 @@ package org.moon
 			_width=100;
 			_height=18;
 			setSize(_width,_height)
-			super();
 		}
 		/**设置皮肤*/
 		override public function setSkin(type:String, skin:Object,param:Object=null):void

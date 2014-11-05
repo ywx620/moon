@@ -101,5 +101,12 @@ package org.moon.utils
 		public static const CHECKBOX_DEFAULT:String="checkbox-default";
 		/**checkbox 复选框选中的状态*/
 		public static const CHECKBOX_SELECT:String="checkbox-select";
+		
+		/**radio*/
+		public static const MODEL_RADIO:String="model-radio";
+		/**radio 单选框默认状态*/
+		public static const RADIO_DEFAULT:String="radio-default";
+		/**radio 单选框选中的状态*/
+		public static const RADIO_SELECT:String="radio-select";
 	}
 }

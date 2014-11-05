@@ -15,7 +15,6 @@ package org.moon
 	public class ListBar extends BasicBar
 	{
 		private var _index:int=0;
-		private var _data:Array=new Array("null");
 		private var openButton:BasicButton;
 		private var openBackground:Scale9Image;
 		private var listBackground:Scale9Image;
@@ -127,16 +126,6 @@ package org.moon
 			index=int(btn.name);
 			_openText.text=data[index];
 			removeButtons();
-		}
-		
-		public function get data():Array
-		{
-			return _data;
-		}
-		
-		public function set data(value:Array):void
-		{
-			_data = value;
 		}
 		
 		public function get index():int

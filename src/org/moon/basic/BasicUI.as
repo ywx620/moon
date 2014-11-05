@@ -128,17 +128,30 @@ package org.moon.basic
 			s.addChild(text);
 			return s;
 		}
-		/**得到矩形-钩 bc背景颜色，gc钩的颜色*/
-		public static function getCheckBoxRect(bc:uint=0XFFFFFF,gc:uint=0):Sprite
+		/**得到矩形-复选框 bc背景颜色，gc钩的颜色,type为0是没有钩为1是有钩*/
+		public static function getCheckBoxRect(bc:uint=0XFFFFFF,gc:uint=0,type:int=0):Sprite
 		{
 			var s:Sprite = new Sprite;
 			s.addChild(getRect(20,20,bc));
-			var r:Sprite=new Sprite;
-			r.graphics.beginFill(gc);
-			r.graphics.moveTo(0,10);
-			r.graphics.lineTo(10,18);r.graphics.lineTo(22,4);r.graphics.lineTo(18,0);r.graphics.lineTo(10,9);
-			r.graphics.lineTo(6,4);r.graphics.lineTo(0,10);
-			s.addChild(r);
+			if(type==1){
+				var r:Sprite=new Sprite;
+				r.graphics.beginFill(gc);
+				r.graphics.moveTo(0,10);
+				r.graphics.lineTo(10,18);r.graphics.lineTo(22,4);r.graphics.lineTo(18,0);r.graphics.lineTo(10,9);
+				r.graphics.lineTo(6,4);r.graphics.lineTo(0,10);
+				s.addChild(r);
+			}
+			return s;
+		}
+		/**得到矩形-单选框 bc背景颜色，gc钩的颜色,type为0是没有圆为1是有圆*/
+		public static function getRadioCircle(bc:uint=0XFFFFFF,gc:uint=0,type:int=0):Sprite
+		{
+			var s:Sprite = new Sprite;
+			s.addChild(getCircle(9,bc,9,9));
+			if(type==1){
+				var r:Sprite=getCircle(5,gc,9,9)
+				s.addChild(r);
+			}
 			return s;
 		}
 		/**得到BitmapData*/

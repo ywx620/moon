@@ -30,8 +30,17 @@ package org.moon
 			createListBar(300,300);
 			createNumberBar(10,250);
 			createProgressBar(300,250);
-			createCheckBox(200, 150);
-			createWarnBar(500,300);
+			createCheckBox(200,150);
+			createRadioGroup(300,100);	
+			
+		}
+		
+		private function createRadioGroup(x:int, y:int):void
+		{
+			var bar:RadioGroup=new RadioGroup;
+			bar.data=["radio1","radio2","radio3","radio4","radio5"]
+			this.addChild(bar);
+			bar.move(x,y);
 		}
 		
 		private function createCheckBox(x:int, y:int):void
@@ -47,39 +56,51 @@ package org.moon
 			checkbox.label="moon";
 			checkbox.setLabelSeat(25,0);
 			checkbox.x=x;checkbox.y=y+25;
+			
+			checkbox=new CheckBox;
+			this.addChild(checkbox);
+			checkbox.label="sun";
+			checkbox.setLabelSeat(25,0);
+			checkbox.x=x;checkbox.y=y+50;
 		}
 		
 		private function createProgressBar(x:int, y:int):void
 		{
 			progressBar=new ProgressBar;
 			progressBar.x=x;progressBar.y=y;
-			progressBar.setSkin(MoonConst.PROGRESS_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRect(100,20,0)));
-			progressBar.setSkin(MoonConst.PROGRESS_BAR,			BasicUI.getBitmapData(BasicUI.getRect(100,20,0XFF0000)));
-			progressBar.setSize(200,30);
+			//不使用主题皮肤，自己设定皮肤
+			progressBar.setSkin(MoonConst.PROGRESS_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRect(100,18,0)));
+			progressBar.setSkin(MoonConst.PROGRESS_BAR,			BasicUI.getBitmapData(BasicUI.getRect(100,18,0XFF0000)));
+			//progressBar.setSize(200,30);
 			this.addChild(progressBar);
 			progressBar.value=0.5;
+			//使用主题皮肤
+			var p:ProgressBar=new ProgressBar;
+			p.x=x;p.y=y+20;
+			this.addChild(p);
+			p.value=0.5;
 		}
 		
 		private function createNumberBar(x:int, y:int):void
 		{
 			numberBar=new NumberBar;
 			this.addChild(numberBar);
-			numberBar.x=x;numberBar.y=y;
+			numberBar.move(x,y);
 		}
 		
 		private function createListBar(x:int, y:int):void
 		{
 			// TODO Auto Generated method stub
 			listBar=new ListBar;
-			listBar.data=new Array("list1","list2","list3","list4");
+			listBar.data=["list1","list2","list3","list4"];
 			this.addChild(listBar);
-			listBar.x=x;listBar.y=y;
+			listBar.move(x,y);
 		}
 		
 		private function createWarnBar(x:int, y:int):void
 		{
 			warnBar=new WarnBar;
-			warnBar.x=x;warnBar.y=y;
+			warnBar.move(x,y);
 			warnBar.label="<font color='#ff0000'>不用老是提示我好吗不用老是提示我好吗</font>"
 			warnBar.newAddEventListener(WarnBar.SURE,onWarnHandler);
 			warnBar.newAddEventListener(WarnBar.CANCEL,onWarnHandler);
@@ -101,7 +122,7 @@ package org.moon
 		private function createScrollBar(x:int, y:int):void
 		{
 			scrollBar=new ScrollBar;
-			scrollBar.x=x;scrollBar.y=y;
+			scrollBar.move(x,y);
 			scrollBar.setSize(100,200);
 			scrollBar.scrollTarget=BasicUI.getRectAndX(100,200,0XFFFFFF);
 			this.addChild(scrollBar);
@@ -148,24 +169,23 @@ package org.moon
 				var box:Sprite=BasicUI.getRectAndX(100,100,BasicUI.randomColor);
 				box.y=container.height;
 				container.addChild(box);
-			}else {
-				if(container.numChildren>2){
-					container.removeChildAt(container.numChildren - 1);
-				}
+				
+				createWarnBar(500,300);
+			}else{
+				container.removeChildAt(container.numChildren-1);
 			}
 		}
 		private var buttons:Vector.<BasicButton>=new Vector.<BasicButton>;
-		private var pageNum:int=4;
+		private var pageNum:int=6;
 		private var half:int=Math.ceil(pageNum/2);
 		private var current:int=1;
-		private var total:int=8;
+		private var total:int=15;
 		private var icon:Sprite;
 		private function createPageBar(x:int, y:int):void
 		{
 			pageBar=new PageBar;
 			this.addChild(pageBar);
-			pageBar.x=x;
-			pageBar.y=y;
+			pageBar.move(x,y);
 			pageBar.totalPage=total;
 			pageBar.newAddEventListener(PageBar.NEXT_PAGE,onNextPage);
 			pageBar.newAddEventListener(PageBar.PREV_PAGE,onNextPage);

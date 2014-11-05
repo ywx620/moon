@@ -13,7 +13,6 @@ package org.moon
 	 */
 	public class TabBar extends BasicBar
 	{
-		protected var _tabbarIndex:int;
 		public function TabBar()
 		{
 			super();
@@ -52,19 +51,13 @@ package org.moon
 			button.removeEvent();
 			button.isButtonModel=false;
 			button.currentStatc=MoonConst.BUTTON_DOWN;
-			_tabbarIndex=int(button.name.split("-")[1]);
-			this.newDispatchEvent(MoonEvent.CHANGE,this.tabbarIndex);
+			_barIndex=int(button.name.split("-")[1]);
+			this.newDispatchEvent(MoonEvent.CHANGE,barIndex);
 		}
-		/**设置选择第几个*/
-		public function get tabbarIndex():int
+		override public function set barIndex(value:int):void
 		{
-			return _tabbarIndex;
-		}
-
-		public function set tabbarIndex(value:int):void
-		{
-			_tabbarIndex = value;
-			if(buttons.length>0) selectButton(_tabbarIndex);
+			_barIndex = value;
+			if(buttons.length>0) selectButton(_barIndex);
 			
 		}
 		
