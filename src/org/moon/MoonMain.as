@@ -26,13 +26,28 @@ package org.moon
 		{
 			new MoonTheme;
 			createScrollBar(110,10);
+			createWarnBar(500,300);
 			createPageBar(300,30);
 			createListBar(300,300);
 			createNumberBar(10,250);
 			createProgressBar(300,250);
 			createCheckBox(200,150);
-			createRadioGroup(300,100);	
-			
+			createRadioGroup(300,100);
+			createTabBar(400,10)
+		}
+		
+		private function createTabBar(x:int, y:int):void
+		{
+			var tabbar:TabBar=new TabBar;
+			this.addChild(tabbar);
+			tabbar.move(x,y);
+			tabbar.gad=50;
+			for(var i:int=0;i<5;i++){
+				var btn:BasicButton=new BasicButton;
+				tabbar.addItem(btn);
+				btn.label="菜单"+i;
+				btn.setLabelSeat(30,10);
+			}
 		}
 		
 		private function createRadioGroup(x:int, y:int):void
@@ -169,8 +184,6 @@ package org.moon
 				var box:Sprite=BasicUI.getRectAndX(100,100,BasicUI.randomColor);
 				box.y=container.height;
 				container.addChild(box);
-				
-				createWarnBar(500,300);
 			}else{
 				container.removeChildAt(container.numChildren-1);
 			}
