@@ -15,7 +15,8 @@ package org.moon.basic
 		{
 			textField=new TextField();
 			textField.selectable=false;
-			textField.mouseEnabled=false;
+			textField.mouseEnabled = false;
+			textField.autoSize = "left";
 			this.addChild(textField);
 		}
 
@@ -28,12 +29,6 @@ package org.moon.basic
 		{
 			_text = value;
 			textField.text=value;
-		}
-		
-		public function setSize(w:int,h:int):void
-		{
-			textField.width=w;
-			textField.height=h;
 		}
 	}
 }

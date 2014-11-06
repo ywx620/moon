@@ -55,7 +55,6 @@ package org.moon
 				var btn:BasicButton=new BasicButton;
 				tabbar.addItem(btn);
 				btn.label="菜单"+i;
-				btn.setLabelSeat(30,10);
 			}
 		}
 		

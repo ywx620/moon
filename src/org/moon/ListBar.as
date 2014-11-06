@@ -95,6 +95,7 @@ package org.moon
 					btn.y=openHeight+2+(btn.height+2)*(j++);
 					btn.newAddEventListener(MoonEvent.MOUSE_UP,onSelectIndex);
 					buttons.push(btn);
+					btn.setLabelSeat(1,0);
 				}
 			}
 			this.stage.addEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);

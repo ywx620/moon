@@ -57,10 +57,7 @@ package org.moon.basic
 				if(_width!=-1){
 					setSize(_width,-1)
 				}
-				if(basicLabel!=null){
-					basicLabel.x=(dataSkin[MoonConst.BUTTON_UP].width-basicLabel.width)>>1;
-					basicLabel.y=(dataSkin[MoonConst.BUTTON_UP].height-basicLabel.height)>>1;
-				}
+				autoLabelSeat();
 			}
 			
 		}
@@ -107,7 +104,15 @@ package org.moon.basic
 				}
 			}
 		}
-		
+		private function autoLabelSeat():void
+		{
+			if(basicLabel!=null){
+				if(dataSkin[MoonConst.BUTTON_UP]){
+					basicLabel.x=(dataSkin[MoonConst.BUTTON_UP].width-basicLabel.width)>>1;
+					basicLabel.y=(dataSkin[MoonConst.BUTTON_UP].height-basicLabel.height)>>1;
+				}
+			}
+		}
 		/**增加事件*/
 		public function addEvent():void
 		{
@@ -174,6 +179,7 @@ package org.moon.basic
 				if(w!=-1)	obj.width=w;
 				if(h!=-1)	obj.height=h;
 			}
+			autoLabelSeat()
 		}
 		
 		public function get label():String
@@ -187,13 +193,14 @@ package org.moon.basic
 				basicLabel=new BasicLabel;
 				this.addChild(basicLabel);
 			}
-			basicLabel.setSize(value.length*13,20);
 			basicLabel.text=value;
 			_label = value;
 		}
-		public function setLabelSeat(x:int,y:int):void
+		/**如果值是为0则不做变化*/
+		public function setLabelSeat(x:Number=0,y:Number=0):void
 		{
-			basicLabel.x=x;basicLabel.y=y;
+			if(x!=0) basicLabel.x=x;
+			if(y!=0) basicLabel.y=y;
 		}
 		
 		override public function set width(value:Number):void
@@ -202,6 +209,7 @@ package org.moon.basic
 			for each(var obj:DisplayObject in dataSkin){
 				obj.width=value;
 			}
+			autoLabelSeat();
 		}
 		override public function set height(value:Number):void
 		{
@@ -209,6 +217,7 @@ package org.moon.basic
 			for each(var obj:DisplayObject in dataSkin){
 				obj.height=value;
 			}
+			autoLabelSeat();
 		}
 		public function set buttonmc(value:MovieClip):void
 		{

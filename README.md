@@ -30,3 +30,7 @@ v1.02
 ...
 v1.1
 1.新加组件SliderBar
+v1.11
+1.优化BasiceLabel
+2.优化BasicButton
+3.优化ListBar
