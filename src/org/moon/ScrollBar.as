@@ -62,7 +62,7 @@ package org.moon
 			buttonDic[DOWN]=buttonDown;
 			buttonDic[BODY]=buttonBody;
 			buttonDic[BAR]=buttonBar;
-			buttons.push(buttonUp, buttonDown, buttonBody, buttonBar);
+			buttons.push(buttonUp,buttonDown,buttonBody,buttonBar);
 			buttonUp.useHandCursor=false;
 			buttonDown.useHandCursor=false;
 			buttonBody.useHandCursor=false;

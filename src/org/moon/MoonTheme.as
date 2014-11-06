@@ -87,9 +87,17 @@ package org.moon
 			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,0)));
 			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_SELECT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,1)));
 			
-			//单选框
+			//radio 单选框
 			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_DEFAULT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,0)));
 			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_SELECT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,1)));
+			
+			//slider 滑块条
+			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BAR_UP,		BasicUI.getBitmapData(BasicUI.getRoundRect(8,14,COLOR_SCROLL_BAR_UP)));
+			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BAR_DOWN,		BasicUI.getBitmapData(BasicUI.getRoundRect(8,14,COLOR_SCROLL_BAR_OVER)));
+			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BAR_OVER,		BasicUI.getBitmapData(BasicUI.getRoundRect(8,14,COLOR_SCROLL_BAR_DOWN)));
+			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_PROGRESS,		BasicUI.getBitmapData(BasicUI.getRoundRect(100,5,COLOR_BUTTON_UP)));
+			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(100,5,COLOR_TIPS_BG)));
+			
 		}
 	}
 }

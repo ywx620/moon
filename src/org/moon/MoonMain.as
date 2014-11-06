@@ -34,6 +34,15 @@ package org.moon
 			createCheckBox(200,150);
 			createRadioGroup(300,100);
 			createTabBar(400,10)
+			createSliderBar(400,200)
+		}
+		
+		private function createSliderBar(x:int, y:int):void
+		{
+			var bar:SliderBar=new SliderBar;
+			bar.move(x,y);
+			this.addChild(bar);
+			bar.value=0.5;
 		}
 		
 		private function createTabBar(x:int, y:int):void

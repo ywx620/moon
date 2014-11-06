@@ -108,5 +108,16 @@ package org.moon.utils
 		public static const RADIO_DEFAULT:String="radio-default";
 		/**radio 单选框选中的状态*/
 		public static const RADIO_SELECT:String="radio-select";
+		
+		/**slider*/
+		public static const MODEL_SLIDER:String="model-slider";
+		/**slider bar按钮*/
+		public static const SLIDER_BAR_OVER:String="slider-bar-over";
+		public static const SLIDER_BAR_UP:String="slider-bar-up";
+		public static const SLIDER_BAR_DOWN:String="slider-bar-down";
+		/**slider progress*/
+		public static const SLIDER_PROGRESS:String="radio-progress";
+		/**slider background*/
+		public static const SLIDER_BACKGROUND:String="radio-background";
 	}
 }
