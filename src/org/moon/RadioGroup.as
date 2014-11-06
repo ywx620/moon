@@ -34,7 +34,7 @@ package org.moon
 			for(var i:int=0;i<radios.length;i++){
 				radios[i].index=0;
 				radios[i].setStatc();
-				if(radios[i]=radio) barIndex=i;
+				if(radios[i]==radio) barIndex=i;
 			}
 			radio.index=1;
 			radio.setStatc();

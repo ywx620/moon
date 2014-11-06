@@ -105,7 +105,8 @@ package org.moon
 		
 		protected function onTextChange(event:Event):void
 		{
-			_currentPage=int(textField.text);
+			_currentPage = int(textField.text);
+			_currentPage=_currentPage==0?1:_currentPage;
 			updatePage();
 		}
 		

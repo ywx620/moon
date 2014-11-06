@@ -2,7 +2,7 @@ moon
 ====
 date:2014-11-05
 author:vinson
-version:1.1
+version:1.01
 ====
 一个AS3的轻量级皮肤，可以自己制作主题，库中自带了一个主题，在sun目录下有一组必须是使用flash ui 制作的组件。
 目前的组件有
@@ -20,3 +20,10 @@ Scale9Image是9宫格类
 MoonMain例子
 MoonTheme主题
 ...
+v1.02
+1.更新NumBerBar
+当输入0或未数字时默认转换成1
+2.更新ScrollBar
+取掉鼠标移到组件中鼠标变为手形状态
+3.修改RadioGroup的一个小BUG
+4.在lib目录下加入一张所有组件截图
