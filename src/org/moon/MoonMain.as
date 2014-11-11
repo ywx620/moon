@@ -1,6 +1,7 @@
 package org.moon
 {
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.text.TextField;
 	import flash.text.TextFieldType;
 	
@@ -22,6 +23,7 @@ package org.moon
 		private var listBar:ListBar;
 		private var numberBar:NumberBar;
 		private var progressBar:ProgressBar;
+		private var tabbar:TabBar;
 		public function MoonMain()
 		{
 			new MoonTheme;
@@ -33,10 +35,9 @@ package org.moon
 			createProgressBar(300,250);
 			createCheckBox(200,150);
 			createRadioGroup(300,100);
-			createTabBar(400,10)
-			createSliderBar(400,200)
+			createTabBar(400, 10);
+			createSliderBar(400, 200);
 		}
-		
 		private function createSliderBar(x:int, y:int):void
 		{
 			var bar:SliderBar=new SliderBar;
@@ -47,7 +48,7 @@ package org.moon
 		
 		private function createTabBar(x:int, y:int):void
 		{
-			var tabbar:TabBar=new TabBar;
+			tabbar=new TabBar;
 			this.addChild(tabbar);
 			tabbar.move(x,y);
 			tabbar.gad=50;

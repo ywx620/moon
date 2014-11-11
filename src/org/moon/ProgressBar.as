@@ -15,7 +15,6 @@ package org.moon
 	 */
 	public class ProgressBar extends BasicBar
 	{
-		protected var background:Scale9Image;
 		protected var bar:Scale9Image;
 		protected var _value:Number;
 		private var maskQuad:Sprite;
@@ -30,7 +29,7 @@ package org.moon
 		override public function setSkin(type:String, skin:Object,param:Object=null):void
 		{
 			if(type==MoonConst.PROGRESS_BACKGROUND){
-				background=new Scale9Image(skin.clone());
+				setBackground(skin,param);
 			}else if(type==MoonConst.PROGRESS_BAR){
 				bar=new Scale9Image(skin.clone());
 			}
@@ -42,10 +41,10 @@ package org.moon
 				if(model==MoonConst.MODEL_PROGRESS){
 					for(var type:String in NameList.list[model]){
 						if(type.split("-")[1]=="background"){
-							var image:BitmapData=NameList.list[model][type];
-							if(!background)	background=new Scale9Image(image.clone());
+							var skin:Object=NameList.list[model][type];
+							setBackground(skin,NameList.param[model][type]);
 						}else{
-							image=NameList.list[model][type];
+							var image:BitmapData=NameList.list[model][type];
 							if(!bar)	bar=new Scale9Image(image.clone());
 						}
 					}

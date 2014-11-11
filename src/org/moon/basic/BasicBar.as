@@ -3,6 +3,8 @@ package org.moon.basic
 	import flash.utils.Dictionary;
 	
 	import org.moon.utils.MoonConst;
+	
+	import org.moon.utils.Scale9Image
 
 	/**
 	 * ...
@@ -16,6 +18,7 @@ package org.moon.basic
 		protected var modelType:String="";
 		protected var _barIndex:int;
 		protected var _data:Array;
+		protected var background:Scale9Image;
 		public function BasicBar()
 		{
 			_width=80;
@@ -48,6 +51,15 @@ package org.moon.basic
 					bButton.setSkin(MoonConst.BUTTON_OVER,skin,param);
 				}else if(statcType=="movieclip"){
 					bButton.setSkin(MoonConst.BUTTON_MOVIECLIP,skin,param);
+				}
+			}
+		}
+		protected function setBackground(skin:Object,param:Object):void
+		{
+			if(!background){
+				background=new Scale9Image(skin.clone());
+				if(param){
+					if(param["rect"]) background.scale9Grid=param["rect"];
 				}
 			}
 		}

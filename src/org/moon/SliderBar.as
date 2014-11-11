@@ -18,7 +18,6 @@ package org.moon
 	 */
 	public class SliderBar extends BasicBar
 	{
-		protected var background:Scale9Image;
 		protected var progress:Scale9Image;
 		protected var bar:BasicButton;
 		protected var _value:Number=0;
@@ -43,7 +42,7 @@ package org.moon
 		{
 			super.setSkin(type,skin,param);
 			if(type==MoonConst.SLIDER_BACKGROUND){
-				if(!background)	background=new Scale9Image(skin.clone());
+				setBackground(skin,param);
 			}else if(type==MoonConst.SLIDER_PROGRESS){
 				if(!progress) progress=new Scale9Image(skin.clone());
 			}
@@ -55,10 +54,10 @@ package org.moon
 				if(model==MoonConst.MODEL_SLIDER){
 					for(var type:String in NameList.list[model]){
 						if(type.split("-")[1]=="background"){
-							var image:BitmapData=NameList.list[model][type];
-							if(!background)	background=new Scale9Image(image.clone());
+							var skin:Object=NameList.list[model][type];
+							setBackground(skin,NameList.param[model][type]);
 						}else if(type.split("-")[1]=="progress"){
-							image=NameList.list[model][type];
+							var image:BitmapData=NameList.list[model][type];
 							if(!progress)	progress=new Scale9Image(image.clone());
 						}else{
 							setSkin(type,NameList.list[model][type],NameList.param[model][type]);

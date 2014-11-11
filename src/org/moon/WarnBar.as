@@ -18,7 +18,6 @@ package org.moon
 	{
 		protected var buttonCancel:BasicButton;
 		protected var buttonSure:BasicButton;
-		protected var background:Scale9Image;
 		protected var _barWidth:int=200;//默认宽度
 		protected var _barHeight:int=100;//默认宽度
 		protected var text:TextField;
@@ -39,14 +38,14 @@ package org.moon
 			buttonSure.name=SURE;
 			buttonDic[CANCEL]=buttonCancel;
 			buttonDic[SURE]=buttonSure;
-			buttons.push(buttonCancel,buttonSure);
+			buttons.push(buttonSure,buttonCancel);
 		}
 		/**设置皮肤*/
 		override public function setSkin(type:String, skin:Object,param:Object=null):void
 		{
 			super.setSkin(type,skin,param);
 			if(type==MoonConst.WARN_BACKGROUND){
-				background=new Scale9Image(skin.clone());
+				setBackground(skin,param);
 			}
 		}
 		/**渲染,如果没给bar设置皮肤,它会使用主题皮肤*/
@@ -58,8 +57,8 @@ package org.moon
 					if(model==MoonConst.MODEL_WARN){
 						for(var type:String in NameList.list[model]){
 							if(type.split("-")[1]=="background"){
-								var image:BitmapData=NameList.list[model][type];
-								if(!background)	background=new Scale9Image(image.clone())
+								var skin:Object=NameList.list[model][type];
+								setBackground(skin,NameList.param[model][type]);
 							}else{
 								setSkin(type,NameList.list[model][type],NameList.param[model][type]);
 							}

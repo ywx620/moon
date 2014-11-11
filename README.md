@@ -34,3 +34,7 @@ v1.11
 1.优化BasiceLabel
 2.优化BasicButton
 3.优化ListBar
+v1.12
+1.优化MoonEvent
+2.新加组件McTabButton;
+3.对组件的背景渲染优化

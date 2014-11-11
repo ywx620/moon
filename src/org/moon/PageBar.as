@@ -22,7 +22,6 @@ package org.moon
 		protected var _currentPage:int=1;
 		protected var _totalPage:int=5;
 		protected var textField:TextField;
-		protected var background:Scale9Image;
 		protected var _pageWidth:int=80;//默认宽度
 		protected static const UP:String="up";
 		protected static const DOWN:String="down";
@@ -47,7 +46,7 @@ package org.moon
 		{
 			super.setSkin(type,skin,param);
 			if(type==MoonConst.PAGE_BACKGROUND){
-				background=new Scale9Image(skin.clone());
+				setBackground(skin,param);
 			}
 		}
 		/**渲染,如果没给bar设置皮肤,它会使用主题皮肤*/
@@ -59,8 +58,8 @@ package org.moon
 					if(model==MoonConst.MODEL_PAGE){
 						for(var type:String in NameList.list[model]){
 							if(type.split("-")[1]=="background"){
-								var image:BitmapData=NameList.list[model][type];
-								if(!background)	background=new Scale9Image(image.clone())
+								var skin:Object=NameList.list[model][type];
+								setBackground(skin,NameList.param[model][type]);
 							}else{
 								setSkin(type,NameList.list[model][type],NameList.param[model][type]);
 							}

@@ -21,9 +21,11 @@ package org.moon.event
 		public var currentTarget:Object;
 		public var type:String;
 		public var data:Object;
-		public function MoonEvent(target:IEventDispatcher=null)
+		public function MoonEvent(type:String="",data:Object=null,currentTarget:Object=null)
 		{
-			super(target);
+			this.type=type;
+			this.data=data;
+			this.currentTarget=currentTarget;
 		}
 	}
 }
