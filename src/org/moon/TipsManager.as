@@ -26,6 +26,11 @@ package org.moon
 			if(instance==null) instance=new TipsManager;
 			return instance;
 		}
+		public static function white(str:String):String{return "<font color='#ffffff'>"+str+"</font>";}
+		public static function red(str:String):String{return "<font color='#ff0000'>"+str+"</font>";}
+		public static function green(str:String):String{return "<font color='#00ff00'>"+str+"</font>";}
+		public static function bule(str:String):String{return "<font color='#000ff'>"+str+"</font>";}
+		public static function yellow(str:String):String{return "<font color='#ffff00'>"+str+"</font>";}
 		public function removeTips():void
 		{
 			if(host) host.stage.removeEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);

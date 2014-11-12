@@ -38,3 +38,10 @@ v1.12
 1.优化MoonEvent
 2.新加组件McTabButton;
 3.对组件的背景渲染优化
+v1.13
+1.在BasicBar中加入公用的dataObj对象
+2.优化warnBar
+3.优化McButton
+4.优化TipsManager
+v1.2
+1.新加组件AutoWarnBar

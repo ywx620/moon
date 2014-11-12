@@ -37,6 +37,15 @@ package org.moon
 			createRadioGroup(300,100);
 			createTabBar(400, 10);
 			createSliderBar(400, 200);
+			createAutoWarnBar(500, 500);
+		}
+		private function createAutoWarnBar(x:int, y:int):void
+		{
+			var bar:AutoWarnBar = new AutoWarnBar;
+			bar.move(x,y);
+			bar.label = "<font color='#ff0000'>这是个过几秒会自己关闭的</font>"
+			bar.start(9);
+			this.addChild(bar);
 		}
 		private function createSliderBar(x:int, y:int):void
 		{

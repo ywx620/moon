@@ -19,6 +19,7 @@ package org.moon.basic
 		protected var _barIndex:int;
 		protected var _data:Array;
 		protected var background:Scale9Image;
+		public var dataObj:Object=new Object;
 		public function BasicBar()
 		{
 			_width=80;
@@ -74,6 +75,11 @@ package org.moon.basic
 				buttons.length=0;
 				buttons=null;
 			}
+			if(_data){
+				_data.length=0;
+				_data=null;
+			}
+			dataObj=null;
 			super.dispose();
 		}
 

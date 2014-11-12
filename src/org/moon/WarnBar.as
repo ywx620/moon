@@ -11,7 +11,7 @@ package org.moon
 	import org.moon.utils.Scale9Image;
 	
 	/**
-	 * ...
+	 * ...有确定与取消
 	 * @author vinson
 	 */
 	public class WarnBar extends BasicBar
@@ -33,9 +33,7 @@ package org.moon
 		{
 			text=new TextField;
 			buttonCancel=new BasicButton;
-			buttonCancel.name=CANCEL;
 			buttonSure=new BasicButton;
-			buttonSure.name=SURE;
 			buttonDic[CANCEL]=buttonCancel;
 			buttonDic[SURE]=buttonSure;
 			buttons.push(buttonSure,buttonCancel);
@@ -67,6 +65,8 @@ package org.moon
 					}
 				}
 			}
+			buttonCancel.name=CANCEL;
+			buttonSure.name=SURE;
 			this.addChild(background);
 			this.addChild(text);
 			background.width=_barWidth;

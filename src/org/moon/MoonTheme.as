@@ -98,6 +98,8 @@ package org.moon
 			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_PROGRESS,		BasicUI.getBitmapData(BasicUI.getRoundRect(100,5,COLOR_BUTTON_UP)));
 			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(100,5,COLOR_TIPS_BG)));
 			
+			//warn 提醒框自动关闭
+			NameList.add(MoonConst.MODEL_AUTOWARN,MoonConst.AUTOWARN_BACKGROUND,BasicUI.getBitmapData(BasicUI.getRoundRect(20,20,COLOR_TIPS_BG)));
 		}
 	}
 }

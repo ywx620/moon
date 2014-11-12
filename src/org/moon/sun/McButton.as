@@ -13,6 +13,7 @@ package org.moon.sun
 	 */
 	public class McButton extends BasicButton
 	{
+		public var _hasIcon:Boolean;
 		public function McButton()
 		{
 			super();
@@ -58,14 +59,16 @@ package org.moon.sun
 		{
 			this.icon=icon;
 			buttonmc.addChild(icon);
-			icon.x=x;icon.y=y;
+			icon.x = x; icon.y = y;
+			_hasIcon=true;
 		}
 		/**删除ICON*/
 		override public function removeIcon():void
 		{
 			if(icon&&buttonmc.contains(icon)){
 				buttonmc.removeChild(icon);
-				icon=null;
+				icon = null;
+				_hasIcon=false;
 			}
 		}
 		override public function get isButtonModel():Boolean
@@ -106,6 +109,10 @@ package org.moon.sun
 			}else if(value==MoonConst.BUTTON_DOWN){
 				currentFrame=3;
 			}
+		}
+		public function get hasIcon():Boolean
+		{
+			return _hasIcon;
 		}
 	}
 }

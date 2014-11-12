@@ -118,6 +118,11 @@ package org.moon.utils
 		/**slider progress*/
 		public static const SLIDER_PROGRESS:String="radio-progress";
 		/**slider background*/
-		public static const SLIDER_BACKGROUND:String="radio-background";
+		public static const SLIDER_BACKGROUND:String = "radio-background";
+		
+		/**autoWarnBar*/
+		public static const MODEL_AUTOWARN:String="model-autowarn";
+		/**autowarn 中间的身体*/
+		public static const AUTOWARN_BACKGROUND:String="autowarn-background";
 	}
 }
