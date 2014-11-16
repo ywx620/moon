@@ -26,6 +26,11 @@ package org.moon
 		private var tabbar:TabBar;
 		public function MoonMain()
 		{
+			for (var i:int = 0; i <= 9;i++ ){
+			var s:Sprite = BasicUI.getNumber(i);
+			this.addChild(s); s.x = 600+i*20;
+			s.y = 450;
+			}
 			new MoonTheme;
 			createScrollBar(110,10);
 			createWarnBar(500,300);
@@ -38,6 +43,8 @@ package org.moon
 			createTabBar(400, 10);
 			createSliderBar(400, 200);
 			createAutoWarnBar(500, 500);
+			
+			
 		}
 		private function createAutoWarnBar(x:int, y:int):void
 		{

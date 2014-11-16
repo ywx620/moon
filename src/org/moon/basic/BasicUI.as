@@ -154,6 +154,40 @@ package org.moon.basic
 			}
 			return s;
 		}
+		/**得到数字的sprite*/
+		public static function getNumber(num:int = 8, bc:uint = 0):Sprite
+		{
+			var nums:Array=new Array([1,1,1,1,0,1,1],[1,0,0,1,0,0,0],[0,1,1,1,1,0,1],[0,1,1,0,1,1,1],[1,0,1,1,1,0,0],[1,1,0,0,1,1,1],[1,1,0,1,1,1,1],[0,1,1,0,0,1,0],[1,1,1,1,1,1,1],[1,1,1,0,1,1,1]);
+			var sprites:Array = new Array;
+			var s:Sprite = new Sprite;
+			for (var i:int = 0; i < 7; i++ ) {
+				var n:Sprite = getRect(12, 12, bc);
+				if (i == 0) {
+					n.width = 3;n.x = -3;
+				}else if (i == 1) {
+					n.height = 3;n.y = -3;
+				}else if (i == 2) {
+					n.width = 3;n.x = 12;
+				}else if (i == 3) {
+					n.width = 3; n.x = -3; n.y = 12+3;
+				}else if (i == 4) {
+					n.height = 3;n.y = 12;
+				}else if (i == 5) {
+					n.width = 3;n.x = 12;n.y=12+3
+				}else if (i == 6) {
+					n.height = 3;n.y = 24+3;
+				}
+				sprites.push(n);
+			}
+			var ns:Array = nums[num];
+			for (i = 0; i < ns.length; i++ ) {
+				if (ns[i] == 1) {
+					n = sprites[i];
+					s.addChild(n);
+				}
+			}
+			return s;
+		}
 		/**得到BitmapData*/
 		public static function getBitmapData(s:Sprite):BitmapData
 		{
