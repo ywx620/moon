@@ -160,6 +160,8 @@ package org.moon.basic
 			var nums:Array=new Array([1,1,1,1,0,1,1],[1,0,0,1,0,0,0],[0,1,1,1,1,0,1],[0,1,1,0,1,1,1],[1,0,1,1,1,0,0],[1,1,0,0,1,1,1],[1,1,0,1,1,1,1],[0,1,1,0,0,1,0],[1,1,1,1,1,1,1],[1,1,1,0,1,1,1]);
 			var sprites:Array = new Array;
 			var s:Sprite = new Sprite;
+			s.graphics.beginFill(0, 0);
+			s.graphics.drawRect(0, 0, 18, 33);//目的是为了让每个数字大小都一样
 			for (var i:int = 0; i < 7; i++ ) {
 				var n:Sprite = getRect(12, 12, bc);
 				if (i == 0) {
@@ -177,6 +179,8 @@ package org.moon.basic
 				}else if (i == 6) {
 					n.height = 3;n.y = 24+3;
 				}
+				n.x += 3;				
+				n.y += 3;				
 				sprites.push(n);
 			}
 			var ns:Array = nums[num];

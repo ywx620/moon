@@ -1,5 +1,6 @@
 package org.moon
 {
+	import org.moon.basic.BasicBar;
 	import org.moon.basic.BasicButton;
 	import org.moon.basic.BasicContent;
 	import org.moon.event.MoonEvent;
@@ -8,7 +9,7 @@ package org.moon
 	 * ...
 	 * @author vinson
 	 */
-	public class NumPageBar extends BasicContent
+	public class NumPageBar extends BasicBar
 	{
 		private var buttons:Vector.<BasicButton>=new Vector.<BasicButton>;
 		private var buttonUp:BasicButton;
@@ -96,7 +97,7 @@ package org.moon
 				buttonUp.buttonIsEnabled(false);
 				buttonDown.buttonIsEnabled(false);
 			}else{
-				if(this._currentPage==0)					buttonUp.buttonIsEnabled(false);
+				if(this._currentPage==0)						buttonUp.buttonIsEnabled(false);
 				else if(this._currentPage==this._totalPage-1)	buttonDown.buttonIsEnabled(false);
 			}
 			

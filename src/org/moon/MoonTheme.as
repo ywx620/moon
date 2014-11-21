@@ -21,6 +21,7 @@ package org.moon
 		public static const COLOR_SCROLL_BAR_DOWN:uint=0X844200;
 		public static const COLOR_SCROLL_BAR_UP:uint=0XBB5E00;
 		public static const COLOR_TIPS_BG:uint=0XCCCCCC;
+		public static const COLOR_NUMBER:uint=0X0000E3;
 		public function MoonTheme()
 		{
 			//button 按钮
@@ -99,7 +100,19 @@ package org.moon
 			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(100,5,COLOR_TIPS_BG)));
 			
 			//warn 提醒框自动关闭
-			NameList.add(MoonConst.MODEL_AUTOWARN,MoonConst.AUTOWARN_BACKGROUND,BasicUI.getBitmapData(BasicUI.getRoundRect(20,20,COLOR_TIPS_BG)));
+			NameList.add(MoonConst.MODEL_AUTOWARN, MoonConst.AUTOWARN_BACKGROUND, BasicUI.getBitmapData(BasicUI.getRoundRect(20, 20, COLOR_TIPS_BG)));
+			
+			//integer 整数字
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_0,BasicUI.getBitmapData(BasicUI.getNumber(0,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_1,BasicUI.getBitmapData(BasicUI.getNumber(1,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_2,BasicUI.getBitmapData(BasicUI.getNumber(2,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_3,BasicUI.getBitmapData(BasicUI.getNumber(3,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_4,BasicUI.getBitmapData(BasicUI.getNumber(4,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_5,BasicUI.getBitmapData(BasicUI.getNumber(5,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_6,BasicUI.getBitmapData(BasicUI.getNumber(6,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_7,BasicUI.getBitmapData(BasicUI.getNumber(7,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_8,BasicUI.getBitmapData(BasicUI.getNumber(8,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_9,BasicUI.getBitmapData(BasicUI.getNumber(9,COLOR_NUMBER)));
 		}
 	}
 }

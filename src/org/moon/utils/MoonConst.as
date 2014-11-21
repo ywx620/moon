@@ -123,6 +123,19 @@ package org.moon.utils
 		/**autoWarnBar*/
 		public static const MODEL_AUTOWARN:String="model-autowarn";
 		/**autowarn 中间的身体*/
-		public static const AUTOWARN_BACKGROUND:String="autowarn-background";
+		public static const AUTOWARN_BACKGROUND:String = "autowarn-background";
+		
+		/**integerBar*/
+		public static const MODEL_INTEGER:String = "model-integer";
+		public static const INTEGER_0:String = "integer-0";
+		public static const INTEGER_1:String = "integer-1";
+		public static const INTEGER_2:String = "integer-2";
+		public static const INTEGER_3:String = "integer-3";
+		public static const INTEGER_4:String = "integer-4";
+		public static const INTEGER_5:String = "integer-5";
+		public static const INTEGER_6:String = "integer-6";
+		public static const INTEGER_7:String = "integer-7";
+		public static const INTEGER_8:String = "integer-8";
+		public static const INTEGER_9:String = "integer-9";
 	}
 }
