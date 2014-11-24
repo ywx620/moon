@@ -45,3 +45,5 @@ v1.13
 4.优化TipsManager
 v1.2
 1.新加组件AutoWarnBar
+v1.3
+1.新加组件IntegerBar

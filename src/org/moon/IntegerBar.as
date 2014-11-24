@@ -50,10 +50,10 @@ package org.moon
 		{
 			this.removeChildAll();
 			_number = value;
-			var numStr:String = value.toString();
+			var numStr:Array = value.toString().split("")
 			var i:int=0;
 			while (i < numStr.length) {
-				var num:int=int(numStr.substr(i, 1));
+				var num:int=int(numStr[i]);
 				var bitmap:Bitmap = new Bitmap(bitmapdatas[num]);
 				this.addChild(bitmap);
 				bitmap.x += (bitmap.width + gad) * i;
