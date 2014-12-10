@@ -2,6 +2,7 @@ package org.moon
 {
 	import flash.display.BitmapData;
 	import flash.display.DisplayObject;
+	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	
@@ -19,6 +20,9 @@ package org.moon
 		private var openBackground:Scale9Image;
 		private var listBackground:Scale9Image;
 		private var _openText:TextField;
+		private var scrollBar:ScrollBar;
+		private var scrollContainer:Sprite;
+		public var scrollHeight:int = 100;
 		public function ListBar()
 		{
 			super();
@@ -31,7 +35,7 @@ package org.moon
 			_openText=new TextField;
 			_openText.autoSize="left";
 			openButton=new BasicButton;
-			buttonDic["open"]=openButton;
+			buttonDic["open"] = openButton;
 		}
 		/**渲染,如果没给bar设置皮肤,它会使用主题皮肤*/
 		override protected function render():void
@@ -76,7 +80,12 @@ package org.moon
 				btn=null;
 			}
 			buttons.length=0;
-			this.stage.removeEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);
+			this.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onFollowMouse);
+			
+			if (scrollBar) {
+				scrollBar.removeFromParent(true);
+				scrollBar = null;
+			}
 		}
 		
 		private function onMouseHandler(e:MoonEvent):void
@@ -85,18 +94,29 @@ package org.moon
 			var i:int=0;
 			var btn:BasicButton;
 			removeButtons();
+			scrollContainer = new Sprite;
+			scrollContainer.y = openButton.height + 2;
+			this.addChild(scrollContainer);
 			for(i=0;i<data.length;i++){
 				if(i!=index){
 					btn=new BasicButton();
 					btn.label=data[i];
 					btn.name=String(i);
-					this.addChild(btn);
+					scrollContainer.addChild(btn);
 					btn.width=120;
-					btn.y=openHeight+2+(btn.height+2)*(j++);
+					btn.y=(btn.height+2)*(j++);
 					btn.newAddEventListener(MoonEvent.MOUSE_UP,onSelectIndex);
 					buttons.push(btn);
-					btn.setLabelSeat(1,0);
+					btn.setLabelSeat(1, 0);
 				}
+			}
+			if (this.height > scrollHeight) {
+				scrollContainer.y = 2;
+				scrollBar=new ScrollBar;
+				scrollBar.move(btn.width,_openText.height);
+				scrollBar.setSize(btn.width, scrollHeight);
+				scrollBar.scrollTarget = scrollContainer;
+				this.addChild(scrollBar);
 			}
 			this.stage.addEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);
 		}
@@ -163,9 +183,6 @@ package org.moon
 			openBackground=null;
 			listBackground=null;
 			_openText=null;
-		}
-		
-		
-		
+		}		
 	}
 }

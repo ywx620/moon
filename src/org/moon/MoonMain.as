@@ -28,6 +28,14 @@ package org.moon
 		public function MoonMain()
 		{
 			new MoonTheme;
+			if (stage) init();
+			else addEventListener(Event.ADDED_TO_STAGE, init);
+		}
+		
+		private function init(e:Event = null):void 
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			
 			createScrollBar(110,10);
 			createWarnBar(500,300);
 			createPageBar(300,30);
@@ -40,9 +48,8 @@ package org.moon
 			createSliderBar(400, 200);
 			createAutoWarnBar(500, 500);
 			createIntegerBar(550, 180);
-			
-			
 		}
+		
 		private function createIntegerBar(x:int, y:int):void
 		{
 			var integer:IntegerBar = new IntegerBar;
@@ -135,8 +142,10 @@ package org.moon
 		private function createListBar(x:int, y:int):void
 		{
 			// TODO Auto Generated method stub
-			listBar=new ListBar;
-			listBar.data=["list1","list2","list3","list4"];
+			listBar = new ListBar;
+			listBar.setSize(300,100)
+			listBar.data = ["list1", "list2", "list3", "list4", "list5", "list6", "list7", "list8", "list9", "list10", "list11"];
+			//listBar.scrollHeight = 500;
 			this.addChild(listBar);
 			listBar.move(x,y);
 		}
@@ -196,7 +205,9 @@ package org.moon
 			scrollTextBar.setSize(100,150);
 			text.text="asdlfjad;lfjasdflksdjfl;kasdjflksajdfl;kasjdflkasdjfl;asdjfl;askdfjasl;dkfj;asdlfjad;lfjasdflksdjfl;kasdjflksajdfl;kasjdflkasdjfl;asdjfl;askdfjasl;dkfj;asdlfjad;lfjasdflksdjfl;kasdjflksajdfl;kasjdflkasdjfl;asdjfl;askdfjasl;dkfj;"
 			this.addChild(scrollTextBar);
-			text.type=TextFieldType.INPUT;
+			text.type = TextFieldType.INPUT;
+			
+			//scrollBar.removeFromParent(true)
 		
 		}
 		

@@ -106,9 +106,9 @@ package org.moon.basic
 		public function removeFromParent(dispose:Boolean=false):void
 		{
 			var _parent:DisplayObjectContainer=this.parent as DisplayObjectContainer;
-			if (_parent){
-				_parent.removeChild(this);
+			if (_parent) {
 				if(dispose) this.dispose();
+				_parent.removeChild(this);
 			}
 			_parent=null;
 		}

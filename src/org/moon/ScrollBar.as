@@ -42,6 +42,7 @@ package org.moon
 		protected var moveStatc:String;//上下移动状态
 		protected var _scrollHeight:int=100;//滚动条默认高度
 		protected var lineBar:Bitmap;//滚动条的拉把中间的三条杆
+		protected var clearTime:int;
 		public function ScrollBar()
 		{
 			modelType="scroll";
@@ -123,8 +124,10 @@ package org.moon
 		
 		protected function onScrollTargetHandler(event:Event):void
 		{
-			if(event.type==Event.ADDED||event.type==Event.REMOVED){
-				setTimeout(updateButtonBar,100);
+			if (event.type == Event.ADDED || event.type == Event.REMOVED) {
+				if(scrollTarget!=null){
+					//clearTime=setTimeout(updateButtonBar, 200);
+				}
 			}else{
 				scrollTarget.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
 				scrollTarget.addEventListener(MouseEvent.MOUSE_OUT,onMouseWheel);
@@ -153,7 +156,7 @@ package org.moon
 					waitTimer = setTimeout(addTimer,500,DOWN);
 				}else if(button.name==BAR){
 					buttonBar.startDrag(false,new Rectangle(buttonBody.x,buttonBody.y,0,buttonBody.height-buttonBar.height));
-					buttonBar.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+					this.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 					for each(var btn:BasicButton in buttons){
 						btn.removeEvent();
 					}
@@ -173,7 +176,7 @@ package org.moon
 					contentMoveFree();
 				}
 			}
-			buttonBar.stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			this.stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 		}
 		/**增加时间*/
 		private function addTimer(type:String):void
@@ -237,8 +240,8 @@ package org.moon
 		{
 			buttonBar.stopDrag();
 			buttonBar.currentStatc=MoonConst.BUTTON_UP;
-			buttonBar.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
-			buttonBar.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			this.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			this.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 			for each(var button:BasicButton in buttons){
 				button.addEvent();
 			}
@@ -308,8 +311,9 @@ package org.moon
 		
 		override public function dispose():void
 		{
+			clearTimeout(clearTime);
 			removeTimer();
-			buttonBar.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+			this.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 			for each(var button:BasicButton in buttons){
 				button.newRemoveEventListener(MoonEvent.MOUSE_UP,onMouseHandler);
 				button.newRemoveEventListener(MoonEvent.MOUSE_DOWN,onMouseHandler);
