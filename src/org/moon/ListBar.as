@@ -112,7 +112,8 @@ package org.moon
 			}
 			if (this.height > scrollHeight) {
 				scrollContainer.y = 2;
-				scrollBar=new ScrollBar;
+				scrollBar = new ScrollBar;
+				scrollBar.isUpdateBarHeight = false;
 				scrollBar.move(btn.width,_openText.height);
 				scrollBar.setSize(btn.width, scrollHeight);
 				scrollBar.scrollTarget = scrollContainer;

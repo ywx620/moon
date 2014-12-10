@@ -42,7 +42,7 @@ package org.moon
 		protected var moveStatc:String;//上下移动状态
 		protected var _scrollHeight:int=100;//滚动条默认高度
 		protected var lineBar:Bitmap;//滚动条的拉把中间的三条杆
-		protected var clearTime:int;
+		public var isUpdateBarHeight:Boolean=true;//是否更新滚动条中间的拉把长短
 		public function ScrollBar()
 		{
 			modelType="scroll";
@@ -125,8 +125,8 @@ package org.moon
 		protected function onScrollTargetHandler(event:Event):void
 		{
 			if (event.type == Event.ADDED || event.type == Event.REMOVED) {
-				if(scrollTarget!=null){
-					//clearTime=setTimeout(updateButtonBar, 200);
+				if(isUpdateBarHeight){
+					setTimeout(updateButtonBar, 50);
 				}
 			}else{
 				scrollTarget.addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
@@ -278,6 +278,17 @@ package org.moon
 				var y:Number=(buttonBar.height-lineBar.height)>>1;
 				buttonBar.addIcon(lineBar,x,y);
 			}
+			
+			if (scrollTarget) {
+				var boo1:Boolean = (buttonBar.y + buttonBar.height) > buttonDown.y;
+				var boo2:Boolean = scrollTarget.y +scrollTarget.height < _scrollHeight;
+				if (boo1||boo2) {
+					buttonBar.y = buttonDown.y - buttonBar.height;
+					scrollTarget.y = _scrollHeight - scrollTarget.height;
+				}
+				
+			}
+			
 		}
 		
 		protected function get scrollTargetHeith():Number
@@ -311,7 +322,6 @@ package org.moon
 		
 		override public function dispose():void
 		{
-			clearTimeout(clearTime);
 			removeTimer();
 			this.stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 			for each(var button:BasicButton in buttons){
