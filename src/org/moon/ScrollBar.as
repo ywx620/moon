@@ -251,7 +251,10 @@ package org.moon
 		/**场景鼠标移动*/
 		protected function onMouseMove(event:MouseEvent):void
 		{
-			contentMoveFree();
+		        if(scrollTarget)
+		        {
+		                contentMoveFree();
+		        }
 		}
 		/**内容移动*/
 		protected function contentMoveFree():void
