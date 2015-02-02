@@ -256,9 +256,11 @@ package org.moon
 		/**内容移动*/
 		protected function contentMoveFree():void
 		{
-			var moveHeight:int = scrollTargetHeith - scrollBarHeight;
-			var scrollPercent:Number = (buttonBar.y-buttonUp.height) / scrollBarMoveHeight;
-			scrollTarget.y=0-(scrollPercent * moveHeight);
+			if(scrollTarget){
+				var moveHeight:int = scrollTargetHeith - scrollBarHeight;
+				var scrollPercent:Number = (buttonBar.y-buttonUp.height) / scrollBarMoveHeight;
+				scrollTarget.y = 0 - (scrollPercent * moveHeight);
+			}
 		}
 		/**计算buttonBar的变化*/
 		protected function updateButtonBar():void
