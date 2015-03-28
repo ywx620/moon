@@ -112,7 +112,10 @@ package org.moon
 			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_6,BasicUI.getBitmapData(BasicUI.getNumber(6,COLOR_NUMBER)));
 			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_7,BasicUI.getBitmapData(BasicUI.getNumber(7,COLOR_NUMBER)));
 			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_8,BasicUI.getBitmapData(BasicUI.getNumber(8,COLOR_NUMBER)));
-			NameList.add(MoonConst.MODEL_INTEGER,MoonConst.INTEGER_9,BasicUI.getBitmapData(BasicUI.getNumber(9,COLOR_NUMBER)));
+			NameList.add(MoonConst.MODEL_INTEGER, MoonConst.INTEGER_9, BasicUI.getBitmapData(BasicUI.getNumber(9, COLOR_NUMBER)));
+			
+			//time
+			NameList.add(MoonConst.MODEL_TIME, MoonConst.TIME_COLON, BasicUI.getBitmapData(BasicUI.getColon(COLOR_NUMBER)));
 		}
 	}
 }

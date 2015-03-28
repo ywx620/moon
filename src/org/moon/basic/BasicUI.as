@@ -192,6 +192,14 @@ package org.moon.basic
 			}
 			return s;
 		}
+		/**得到冒号*/
+		public static function getColon(c:uint):Sprite
+		{
+			var s:Sprite = new Sprite;
+			s.addChild(getRect(3, 3, c, 0, 0));
+			s.addChild(getRect(3, 3, c, 0, 10));
+			return s;
+		}
 		/**得到BitmapData*/
 		public static function getBitmapData(s:Sprite):BitmapData
 		{

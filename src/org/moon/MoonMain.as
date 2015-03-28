@@ -2,6 +2,7 @@ package org.moon
 {
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
+	import flash.events.DataEvent;
 	import flash.events.Event;
 	import flash.text.TextField;
 	import flash.text.TextFieldType;
@@ -25,6 +26,7 @@ package org.moon
 		private var numberBar:NumberBar;
 		private var progressBar:ProgressBar;
 		private var tabbar:TabBar;
+		private var timebar:TimeBar;
 		public function MoonMain()
 		{
 			new MoonTheme;
@@ -48,8 +50,16 @@ package org.moon
 			createSliderBar(400, 200);
 			createAutoWarnBar(500, 500);
 			createIntegerBar(550, 180);
+			createTimeBar(560, 220);
 		}
-		
+		private function createTimeBar(x:int, y:int):void
+		{
+			timebar = new TimeBar;
+			this.addChild(timebar);
+			timebar.x = x; timebar.y = y;
+			var date:Date = new Date;
+			timebar.number = date.getTime()+5405*1000;
+		}
 		private function createIntegerBar(x:int, y:int):void
 		{
 			var integer:IntegerBar = new IntegerBar;

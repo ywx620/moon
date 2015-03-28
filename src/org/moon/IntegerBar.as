@@ -12,6 +12,8 @@ package org.moon
 	public class IntegerBar extends BasicBar 
 	{
 		private var _number:Number;
+		/**位数，如果为2时显示01为3显示001以此类推*/
+		public var digit:int = 1;
 		public var bitmapdatas:Array;
 		public function IntegerBar()
 		{
@@ -51,7 +53,13 @@ package org.moon
 			this.removeChildAll();
 			_number = value;
 			var numStr:Array = value.toString().split("")
-			var i:int=0;
+			var i:int = 0;
+			if(digit>numStr.length){
+				for (i = 1; i < digit; i++ ) {
+					numStr.unshift(0);
+				}
+			}
+			i = 0;
 			while (i < numStr.length) {
 				var num:int=int(numStr[i]);
 				var bitmap:Bitmap = new Bitmap(bitmapdatas[num]);
@@ -59,6 +67,7 @@ package org.moon
 				bitmap.x += (bitmap.width + gad) * i;
 				i++;
 			}
+			
 		}
 	}
 

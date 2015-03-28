@@ -137,5 +137,9 @@ package org.moon.utils
 		public static const INTEGER_7:String = "integer-7";
 		public static const INTEGER_8:String = "integer-8";
 		public static const INTEGER_9:String = "integer-9";
+		
+		/**timeBar*/
+		public static const MODEL_TIME:String = "model-time";
+		public static const TIME_COLON:String = "model-time";
 	}
 }
