@@ -7,7 +7,7 @@ package
 	 * ...
 	 * @author vinson
 	 */
-	[SWF(width = "1250", height = "650", backgroundColor = "#999999", frameRate = "30")]
+	[SWF(width = "1250", height = "650")]//, backgroundColor = "#999999", frameRate = "30")]
 	public class Main extends Sprite 
 	{
 		

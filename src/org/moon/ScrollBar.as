@@ -266,7 +266,9 @@ package org.moon
 		protected function updateButtonBar():void
 		{	
 			var targetHeith:int=scrollTargetHeith-buttonUp.height*2;
-			if(targetHeith<=buttonBody.height){
+			if (targetHeith <= buttonBody.height) {
+				buttonBar.y=buttonUp.height;
+				contentMoveFree();
 				buttonBar.visible=false;
 				return;
 			}else{

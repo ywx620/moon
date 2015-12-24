@@ -126,7 +126,9 @@ package org.moon
 			if(v>1) v=1;
 			else if(v<0) v=0;
 			_value = v;
-			maskQuad.scaleX=_value;
+			maskQuad.scaleX = _value;
+			bar.x = value * totalLength;
+			bar.label=int(value*100).toString();
 			this.newDispatchEvent(MoonEvent.CHANGE,_value);
 		}
 	}

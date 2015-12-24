@@ -92,7 +92,7 @@ package org.moon.basic
 			if(dis){
 				this.addChildAt(dis,0);
 			}else{
-				this.addChildAt(dataSkin[MoonConst.BUTTON_DEFAULT],0)
+				this.addChildAt(dataSkin[MoonConst.BUTTON_DEFAULT], 0);
 			}
 		}
 		/**不使用mc按钮*/

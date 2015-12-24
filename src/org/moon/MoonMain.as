@@ -6,6 +6,8 @@ package org.moon
 	import flash.events.Event;
 	import flash.text.TextField;
 	import flash.text.TextFieldType;
+	import org.moon.tree.MoonTreeCellRenderer;
+	import org.moon.tree.Tree;
 	
 	import org.moon.basic.BasicButton;
 	import org.moon.basic.BasicUI;
@@ -51,6 +53,7 @@ package org.moon
 			createAutoWarnBar(500, 500);
 			createIntegerBar(550, 180);
 			createTimeBar(560, 220);
+			createTree(760,300)
 		}
 		private function createTimeBar(x:int, y:int):void
 		{
@@ -187,7 +190,7 @@ package org.moon
 			scrollBar=new ScrollBar;
 			scrollBar.move(x,y);
 			scrollBar.setSize(100,200);
-			scrollBar.scrollTarget=BasicUI.getRectAndX(100,300,0XFFFFFF);
+			scrollBar.scrollTarget=BasicUI.getRectAndX(100,100,0XFFFFFF);
 			this.addChild(scrollBar);
 			
 			var btn:BasicButton=new BasicButton;
@@ -289,6 +292,42 @@ package org.moon
 			}
 			btn.addIcon(icon);
 		}
-		
+		private function createTree(x:int,y:int):void
+		{
+			//需要按下面格式来
+			var myxml:XML = <node label="Root Node">
+								<node label="Work Documents" id="1">
+							   		<node label="Project.doc" id="11"/>
+									<node label="Calendar.doc" id="12"/>
+									<node label="Showcase.ppt" id="13"/>
+							   		<node label="Statistics.xls" id="14"/>
+								</node>
+								<node label="Personal Docs" id="2">
+									<node label="Taxes for 2006.pdf" id="21"/>
+							   		<node label="Investments.xls" id="22"/>
+									<node label="Schedule.doc" id="23"/>
+								</node>
+						  		<node label="Photos" id="3">
+									<node label="Coliseum.jpg" id="31"/>
+								   	<node label="Vatican.jpg" id="32"/>
+								</node>
+							</node>;
+							
+			var tree:Tree = new Tree;
+			tree.treeWidth = 130;
+			tree.itemRenderer = MoonTreeCellRenderer;
+			tree.x = x;
+			tree.y = y;
+			tree.dataProvider = myxml;
+			this.addChild(tree);
+			
+			var tree2:Tree = new Tree;
+			tree2.treeWidth = 130;
+			tree2.x = x+150;
+			tree2.y = y;
+			tree2.isCloseAll=true;//此属性是用来断定当打开一个节点时是否关闭其它节点
+			tree2.dataProvider = myxml;
+			this.addChild(tree2);
+		}
 	}
 }

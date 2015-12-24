@@ -47,3 +47,9 @@ v1.2
 1.新加组件AutoWarnBar
 v1.3
 1.新加组件IntegerBar
+v1.4
+1.优化了ScrollBar类
+2.优化了SliderBar类
+3.新增树形结构数据(tree)
+此树原作者是yanghongbin,他的邮箱assinyang@163.com,有什么问题可以联系他.
+我在此树基础上做了一些新功能,比如单击一个节点时关闭其它节点的操作.
