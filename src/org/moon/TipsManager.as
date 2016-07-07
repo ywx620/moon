@@ -44,7 +44,7 @@ package org.moon
 			host.stage.addEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);
 		}
 		/**支持html的简单tips显示，str是tips容，host是tips主体tips用来描述host,type类型，跟随鼠标否不跟随鼠标*/
-		public function showSimple(str:String,host:DisplayObject,type:String="right"):void
+		public function showSimple(str:String,host:DisplayObject,type:String="follow"):void
 		{
 			this.host=host;
 			this.type=type;

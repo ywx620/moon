@@ -53,7 +53,18 @@ package org.moon
 			createAutoWarnBar(500, 500);
 			createIntegerBar(550, 180);
 			createTimeBar(560, 220);
-			createTree(760,300)
+			createTree(760, 300);
+			createMultiplePercent(400,500);
+		}
+		
+		private function createMultiplePercent(x:int, y:int):void
+		{
+			var mp:MultiplePercent=new MultiplePercent;
+			mp.total=15;
+			mp.datas=[{name:"a",num:3},{name:"b",num:3},{name:"c",num:3},{name:"d",num:3},{name:"e",num:3}];
+			mp.radius=90;
+			mp.move(x,y);
+			this.addChild(mp);
 		}
 		private function createTimeBar(x:int, y:int):void
 		{
@@ -149,7 +160,19 @@ package org.moon
 		{
 			numberBar=new NumberBar;
 			this.addChild(numberBar);
-			numberBar.move(x,y);
+			numberBar.move(x, y);
+			
+			//自定义皮肤
+			var numberBar1:NumberBar=new NumberBar;
+			numberBar1.setSkin(MoonConst.NUMBER_UP_OVER,		BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_UP_UP,			BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_UP_DOWN,		BasicUI.getBitmapData(BasicUI.getRemoveRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_DOWN_OVER,		BasicUI.getBitmapData(BasicUI.getAddRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_DOWN_UP,		BasicUI.getBitmapData(BasicUI.getAddRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_DOWN_DOWN,		BasicUI.getBitmapData(BasicUI.getAddRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			numberBar1.setSkin(MoonConst.NUMBER_BACKGROUND,		BasicUI.getBitmapData(BasicUI.getRoundRect(18,18,MoonTheme.COLOR_RANDOM)));
+			this.addChild(numberBar1);
+			numberBar1.move(x,y+50);
 		}
 		
 		private function createListBar(x:int, y:int):void

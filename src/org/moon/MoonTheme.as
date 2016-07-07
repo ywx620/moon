@@ -21,7 +21,8 @@ package org.moon
 		public static const COLOR_SCROLL_BAR_DOWN:uint=0X844200;
 		public static const COLOR_SCROLL_BAR_UP:uint=0XBB5E00;
 		public static const COLOR_TIPS_BG:uint=0XCCCCCC;
-		public static const COLOR_NUMBER:uint=0X0000E3;
+		public static const COLOR_NUMBER:uint = 0X0000E3;
+		public static function get COLOR_RANDOM():uint{return Math.random()*0XFFFFFF}
 		public function MoonTheme()
 		{
 			//button 按钮
@@ -116,6 +117,10 @@ package org.moon
 			
 			//time
 			NameList.add(MoonConst.MODEL_TIME, MoonConst.TIME_COLON, BasicUI.getBitmapData(BasicUI.getColon(COLOR_NUMBER)));
+			
+			//radio 多个百分比例
+			NameList.add(MoonConst.MODEL_MULTIPLE_PERCENT,MoonConst.MULTIPLE_BODY,BasicUI.getBitmapData(BasicUI.getRoundRect(10,10,COLOR_TIPS_BG)),COLOR_BUTTON_UP);
+			
 		}
 	}
 }

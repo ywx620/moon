@@ -141,5 +141,10 @@ package org.moon.utils
 		/**timeBar*/
 		public static const MODEL_TIME:String = "model-time";
 		public static const TIME_COLON:String = "model-time";
+		
+		/**multiple percent*/
+		public static const MODEL_MULTIPLE_PERCENT:String="model-multiple-percent";
+		/**multiple body*/
+		public static const MULTIPLE_BODY:String="multiple-body";
 	}
 }
