@@ -61,7 +61,7 @@ package org.moon
 		{
 			var mp:MultiplePercent=new MultiplePercent;
 			mp.total=15;
-			mp.datas=[{name:"a",num:3},{name:"b",num:3},{name:"c",num:3},{name:"d",num:3},{name:"e",num:3}];
+			mp.datas=[{name:"a",num:3,color:0XFFBBCC},{name:"b",num:3},{name:"c",num:3},{name:"d",num:3},{name:"e",num:3}];
 			mp.radius=90;
 			mp.move(x,y);
 			this.addChild(mp);

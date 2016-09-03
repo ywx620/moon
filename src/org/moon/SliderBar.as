@@ -93,7 +93,6 @@ package org.moon
 		private function onMove(e:MouseEvent):void
 		{
 			value=bar.x/totalLength;
-			bar.label=int(value*100).toString();
 		}
 		
 		private function onStop(e:MouseEvent):void

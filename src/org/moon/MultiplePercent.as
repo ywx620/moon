@@ -3,6 +3,7 @@ package org.moon
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.geom.ColorTransform;
 	
 	import org.moon.basic.BasicBar;
 	import org.moon.utils.MoonConst;
@@ -14,8 +15,9 @@ package org.moon
 	 */
 	public class MultiplePercent extends BasicBar
 	{
-		/**默认数据*/
-		public var datas:Array=[{name:"a",num:3},{name:"b",num:3},{name:"c",num:3}];
+		/**默认数据,name对应名字描述,num是比例值,这此是必须写的,可选值是color这个是16进制颜色数值*/
+		public var datas:Array = [ { name:"a", num:3 }, { name:"b", num:3 }, { name:"c", num:3 } ];
+		/**total是总值*/
 		public var total:int=9;
 		public var radius:int=100;
 		private var sprites:Vector.<Sprite>=new Vector.<Sprite>;
@@ -33,10 +35,17 @@ package org.moon
 		{
 			var radians:Array=new Array;
 			var radian:Number=0;
-			for(var i:int=0;i<datas.length;i++){
-				var num:int=datas[i].num;
-				var sprite:Sprite=createSprite(total/num);
-				sprite.name=datas[i].name+":"+int(num/total*100)+"%";
+			for (var i:int = 0; i < datas.length; i++) {
+				var data:Object = datas[i];
+				var num:int=data.num;
+				var sprite:Sprite = createSprite(total / num);
+				if (data.hasOwnProperty("color")) {
+					trace(5345345345)
+					var transform:ColorTransform = new ColorTransform;
+					transform.color = data.color;
+					sprite.transform.colorTransform = transform;
+				}
+				sprite.name=data.name+":"+int(num/total*100)+"%";
 				radian+=(num/total)*360;
 				if(radians.length>0){
 					sprite.rotation=radians[i-1];
