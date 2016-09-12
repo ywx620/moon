@@ -277,14 +277,14 @@ class AssetItem extends Object
 		}
 		this.backComplete();
 		if(this.onCompleteFunc){
-			this.onCompleteFunc();
+			this.onCompleteFunc(this);
 		}
 		removeLoadEvent();
 	}
 	private function onStatus(_evt:NetStatusEvent ):void {
 		if (_evt.info.code=="NetStream.Buffer.Full") {
 			if(this.onCompleteFunc){
-				this.onCompleteFunc();
+				this.onCompleteFunc(this);
 			}
 			removeLoadEvent();
 		}
