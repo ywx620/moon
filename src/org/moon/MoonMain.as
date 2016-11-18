@@ -6,8 +6,11 @@ package org.moon
 	import flash.events.Event;
 	import flash.text.TextField;
 	import flash.text.TextFieldType;
+	import org.moon.basic.BasicLabel;
 	import org.moon.tree.MoonTreeCellRenderer;
 	import org.moon.tree.Tree;
+	import org.moon.utils.time.ITime;
+	import org.moon.utils.time.TimeFactory;
 	
 	import org.moon.basic.BasicButton;
 	import org.moon.basic.BasicUI;
@@ -54,7 +57,31 @@ package org.moon
 			createIntegerBar(550, 180);
 			createTimeBar(560, 220);
 			createTree(760, 300);
-			createMultiplePercent(400,500);
+			createMultiplePercent(400, 500);
+			createTimeFactory();
+		}
+		
+		private function createTimeFactory():void {
+			var txt:BasicLabel = new BasicLabel();
+			txt.y = 500;
+			this.addChild(txt);
+			var time:ITime=TimeFactory.getIns().createTime("111");
+			if(time.time==0){//表示不需要每次都重新赋值
+				time.time=10;
+				time.showNum=2;
+			}
+			time.setBackFunction(function back(data:Object):void{txt.text=data.show;if(data.value==0){txt.text="结束"}});
+			time.start();
+			
+			var txt2:BasicLabel = new BasicLabel();
+			txt2.y = 550;
+			this.addChild(txt2);
+			time=TimeFactory.getIns().createTime("222",TimeFactory.COUNT_UP);
+			time.time=10;//表示每次都重新赋值
+			time.showNum=3;
+			time.setBackFunction(function back(data:Object):void{txt2.text=data.show;if(data.value==20){TimeFactory.getIns().removeTime("222")}});
+			time.start();
+			time=null;
 		}
 		
 		private function createMultiplePercent(x:int, y:int):void
