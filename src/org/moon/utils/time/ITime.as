@@ -9,6 +9,7 @@ package org.moon.utils.time
 		function get name():String;
 		function set showNum(value:uint):void;
 		function get showNum():uint;
+		function setTimeStart(value:uint):void;
 		function setBackFunction(value:Function):void
 		function dispose():void
 	}

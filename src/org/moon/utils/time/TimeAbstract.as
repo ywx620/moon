@@ -65,7 +65,13 @@ package org.moon.utils.time
 		{
 			throw new Error("抽像类不能实例化,必须使用子类实例化")
 		}
-		
+		/**设置开始计时并且开始计时*/
+		public function setTimeStart(vaule:uint):void
+		{
+			time=10;
+			start();
+		}
+		/**开始计时*/
 		public function start():void
 		{
 			timer.start();
@@ -76,13 +82,13 @@ package org.moon.utils.time
 		{
 			return _time;
 		}
-		
+		/**设置开始计时*/
 		public function set time(value:uint):void
 		{
 			_time = value;
 			createTime();
 		}
-		
+		/**表示显示几组数,1(00),2(00:00),3(00:00:00)*/
 		public function get showNum():uint
 		{
 			return _showNum;

@@ -17,7 +17,7 @@ package org.moon.utils.time
 			var value:uint=_time++;
 			var show:String=getTimeFormatByNum(value,":",_showNum);
 			var data:Object={value:value,show:show}
-			backfunction(data);
+			if(backfunction!=null)	backfunction(data);
 		}
 	}
 }

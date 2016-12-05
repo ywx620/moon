@@ -42,7 +42,9 @@ package org.moon
 		protected var moveStatc:String;//上下移动状态
 		protected var _scrollHeight:int=100;//滚动条默认高度
 		protected var lineBar:Bitmap;//滚动条的拉把中间的三条杆
-		public var isUpdateBarHeight:Boolean=true;//是否更新滚动条中间的拉把长短
+		public var isUpdateBarHeight:Boolean = true;//是否更新滚动条中间的拉把长短
+		public var isAutoBottom:Boolean = false;//每次加内容进来是否自动移动到最底下
+		public var offset:int=0;//滚动条与内容之前的偏移量
 		public function ScrollBar()
 		{
 			modelType="scroll";
@@ -110,7 +112,7 @@ package org.moon
 			scrollBarMoveHeight=buttonBody.height - buttonBar.height;
 			//渲染内容
 			if(scrollTarget){
-				scrollTarget.x=-1*(scrollTarget.width);
+				scrollTarget.x=-1*(scrollTarget.width)+offset;
 				maskQuad.x=scrollTarget.x;
 				this.addChild(scrollTarget);
 				scrollTarget.mask=maskQuad;
@@ -124,6 +126,9 @@ package org.moon
 		
 		protected function onScrollTargetHandler(event:Event):void
 		{
+			if(event.target.parent!=scrollTarget){
+				return;
+			}
 			if (event.type == Event.ADDED || event.type == Event.REMOVED) {
 				if(isUpdateBarHeight){
 					setTimeout(updateButtonBar, 50);
@@ -293,6 +298,10 @@ package org.moon
 				
 			}
 			
+			if(isAutoBottom){
+				updateBottom();
+			}
+			
 		}
 		
 		protected function get scrollTargetHeith():Number
@@ -322,6 +331,13 @@ package org.moon
 		public function set scrollHeight(value:int):void
 		{
 			_scrollHeight = value;
+		}
+		
+		/**显示到最低下的内容*/
+		protected function updateBottom():void
+		{
+			buttonBar.y=buttonDown.y-buttonBar.height;
+			contentMoveFree();
 		}
 		
 		override public function dispose():void

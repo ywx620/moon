@@ -11,6 +11,7 @@ package org.moon
 	import org.moon.tree.Tree;
 	import org.moon.utils.time.ITime;
 	import org.moon.utils.time.TimeFactory;
+	import org.moon.utils.time.TimeText;
 	
 	import org.moon.basic.BasicButton;
 	import org.moon.basic.BasicUI;
@@ -74,14 +75,21 @@ package org.moon
 			time.start();
 			
 			var txt2:BasicLabel = new BasicLabel();
-			txt2.y = 550;
+			txt2.y = 540;
 			this.addChild(txt2);
 			time=TimeFactory.getIns().createTime("222",TimeFactory.COUNT_UP);
 			time.time=10;//表示每次都重新赋值
 			time.showNum=3;
 			time.setBackFunction(function back(data:Object):void{txt2.text=data.show;if(data.value==20){TimeFactory.getIns().removeTime("222")}});
 			time.start();
-			time=null;
+			time = null;
+			
+			var txt3:TextField = new TextField();
+			txt3.y = 570;
+			txt3.autoSize = "center";
+			this.addChild(txt3);
+			var timeText:TimeText = new TimeText("333", txt3, 15, "确定");
+			timeText.setTime();
 		}
 		
 		private function createMultiplePercent(x:int, y:int):void
@@ -240,7 +248,9 @@ package org.moon
 			scrollBar=new ScrollBar;
 			scrollBar.move(x,y);
 			scrollBar.setSize(100,200);
-			scrollBar.scrollTarget=BasicUI.getRectAndX(100,100,0XFFFFFF);
+			scrollBar.scrollTarget = BasicUI.getRectAndX(100, 100, 0XFFFFFF);
+			scrollBar.isAutoBottom = true;
+			//scrollBar.offset = 120;
 			this.addChild(scrollBar);
 			
 			var btn:BasicButton=new BasicButton;
@@ -261,7 +271,8 @@ package org.moon
 			
 			var text:TextField=new TextField;
 			scrollTextBar=new ScrollTextBar();
-			scrollTextBar.textSeat="right";
+			scrollTextBar.textSeat = "right";
+			scrollTextBar.isAutoBottom = true;
 			scrollTextBar.x=x;
 			scrollTextBar.y=y+300;
 			scrollTextBar.scrollTextTarget=text;

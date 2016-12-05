@@ -8,15 +8,15 @@
   <compiler>
     <define append="true">
       <name>CONFIG::debug</name>
-      <value>false</value>
-    </define>
-    <define append="true">
-      <name>CONFIG::release</name>
       <value>true</value>
     </define>
     <define append="true">
+      <name>CONFIG::release</name>
+      <value>false</value>
+    </define>
+    <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2016/11/18'</value>
+      <value>'2016/12/5'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -30,9 +30,7 @@
       <name>CONFIG::desktop</name>
       <value>false</value>
     </define>
-    <optimize>true</optimize>
-    <omit-trace-statements>true</omit-trace-statements>
-    <verbose-stacktraces>false</verbose-stacktraces>
+    <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
       <path-element>E:\moon\src</path-element>
       <path-element>D:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>

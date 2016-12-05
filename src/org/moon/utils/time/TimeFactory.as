@@ -51,6 +51,13 @@ package org.moon.utils.time
 				dispose(time);
 			}
 		}
+		/**得到已经存在的时间产品*/
+		public function getContentTime(name:String):ITime
+		{
+			var time:ITime=content[name];
+			if(time) return time;
+			return null;
+		}
 		/**当倒计时产品时间为0时表示此产品已经过期,时间工厂会自动把它销毁掉*/
 		protected function onComplete(event:Event):void
 		{
