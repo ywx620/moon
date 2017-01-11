@@ -1,6 +1,9 @@
 package org.moon.sun
 {
 	import flash.display.MovieClip;
+	import flash.text.TextField;
+	
+	import modules.utils.CreateComponent;
 	
 	import org.moon.ProgressBar;
 	
@@ -11,16 +14,21 @@ package org.moon.sun
 	public class McProgressBar extends ProgressBar
 	{
 		protected var _progressmc:MovieClip;
+		protected var txt:TextField;
 		public function McProgressBar()
 		{
 			super();
+		}
+		override protected function render():void
+		{
+			//不让父级渲染
 		}
 		override public function set value(v:Number):void
 		{
 			if(v>1) v=1;
 			else if(v<0) v=0;
 			_value = v;
-			_progressmc.gotoAndStop(v*_progressmc.totalFrames);
+			_progressmc.gotoAndStop(int(v*_progressmc.totalFrames));
 		}
 
 		public function get progressmc():MovieClip
@@ -32,6 +40,13 @@ package org.moon.sun
 		{
 			_progressmc = value;
 		}
-
+		public function setText(str:String,x:int,y:int,w:int):void
+		{
+			if(txt==null){
+				txt=CreateComponent.createTextField(x,y,w,23,"center",16);
+				_progressmc.parent.addChild(txt);
+			}
+			txt.text=str;
+		}
 	}
 }

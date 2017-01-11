@@ -4,6 +4,7 @@ package org.moon.sun
 
 	/**
 	 * ...按钮影片要求必须是六帧，前三帧是按钮1后三帧是按钮2。
+	 * 这个按钮单击下去后会变成另一个按钮就是前后三帧跳
 	 * @author vinson
 	 */
 	public class McTabButton extends McButton
@@ -29,11 +30,21 @@ package org.moon.sun
 				_currentPage=_currentPage==0?1:0;
 			}
 		}
+		public function setCurrentFame(value:int):void
+		{
+			_currentPage=value;
+			currentFrame=1+_currentPage*3;
+		}
+		
+		public function set currentPage(value:int):void
+		{
+			_currentPage=value;
+			currentFrame=1+_currentPage*3;
+		}
 
 		public function get currentPage():int
 		{
 			return _currentPage;
 		}
-
 	}
 }

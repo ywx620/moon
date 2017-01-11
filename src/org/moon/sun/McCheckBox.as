@@ -6,7 +6,7 @@ package org.moon.sun
 	import org.moon.utils.MoonConst;
 
 	/**
-	 * ...
+	 * ...多选框
 	 * @author vinson
 	 */
 	public class McCheckBox extends McButton
@@ -16,7 +16,7 @@ package org.moon.sun
 		{
 			super();
 		}
-		private function setStatc():void
+		public function setStatc():void
 		{
 			if(_index==0)	currentStatc=MoonConst.BUTTON_UP;
 			else			currentStatc=MoonConst.BUTTON_DOWN;

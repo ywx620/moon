@@ -5,6 +5,7 @@ package org.moon.sun
 	import flash.filters.ColorMatrixFilter;
 	
 	import org.moon.basic.BasicButton;
+	import org.moon.basic.BasicLabel;
 	import org.moon.utils.MoonConst;
 	
 	/**
@@ -13,7 +14,9 @@ package org.moon.sun
 	 */
 	public class McButton extends BasicButton
 	{
-		public var _hasIcon:Boolean;
+		private var _hasIcon:Boolean;
+		private var _isGray:Boolean;//是否变灰色
+		public var data:Object={};
 		public function McButton()
 		{
 			super();
@@ -21,6 +24,10 @@ package org.moon.sun
 		override protected function initialization():void
 		{
 			//必须空的复写在这里
+		}
+		override protected function render():void
+		{
+			//不让父级渲染
 		}
 		override protected function set currentFrame(value:int):void
 		{
@@ -59,7 +66,7 @@ package org.moon.sun
 		{
 			this.icon=icon;
 			buttonmc.addChild(icon);
-			icon.x = x; icon.y = y;
+			icon.x=x;icon.y=y;
 			_hasIcon=true;
 		}
 		/**删除ICON*/
@@ -67,7 +74,7 @@ package org.moon.sun
 		{
 			if(icon&&buttonmc.contains(icon)){
 				buttonmc.removeChild(icon);
-				icon = null;
+				icon=null;
 				_hasIcon=false;
 			}
 		}
@@ -90,6 +97,7 @@ package org.moon.sun
 			if(boo==true){
 				buttonmc.filters.length=0;
 				buttonmc.filters=null;
+				_isGray=false;
 			}else{
 				var matrix:Array=[0.3086, 0.6094, 0.0820, 0, 0,  
 					0.3086, 0.6094, 0.0820, 0, 0,  
@@ -97,6 +105,7 @@ package org.moon.sun
 					0,      0,      0,      1, 0];
 				var myfilter:ColorMatrixFilter=new ColorMatrixFilter(matrix);
 				buttonmc.filters=[myfilter];
+				_isGray=true;
 			}
 		}
 		override public function set currentStatc(value:String):void
@@ -105,14 +114,37 @@ package org.moon.sun
 			if(value==MoonConst.BUTTON_UP){
 				currentFrame=1;
 			}else if(value==MoonConst.BUTTON_OVER){
-				currentFrame=2;
+				if(isGray==false)	currentFrame=2;
 			}else if(value==MoonConst.BUTTON_DOWN){
-				currentFrame=3;
+				if(isGray==false)	currentFrame=3;
 			}
 		}
+
+		public function get isGray():Boolean
+		{
+			return _isGray;
+		}
+
 		public function get hasIcon():Boolean
 		{
 			return _hasIcon;
 		}
+		override public function set visible(value:Boolean):void
+		{
+			buttonmc.visible=value;
+		}
+		public function getIcon():DisplayObject
+		{
+			return icon;
+		}
+		public function setLabel(label:BasicLabel):void
+		{
+			basicLabel=label;
+		}
+		public function getLabel():BasicLabel
+		{
+			return basicLabel;
+		}
+
 	}
 }
