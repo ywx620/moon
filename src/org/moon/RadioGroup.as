@@ -20,8 +20,10 @@ package org.moon
 			for(var i:int=0;i<data.length;i++){
 				var radio:Radio=new Radio;
 				this.addChild(radio);
+				var ww:Number=radio.width+5;
 				radio.label=data[i];
-				radio.setLabelSeat(25,0);
+				radio.autoLabelSeat();
+				radio.setLabelSeat(ww);
 				radio.y=(radio.height+gad)*i;
 				radio.newAddEventListener(MoonEvent.MOUSE_DOWN,onMouseHandler);
 				radios.push(radio);

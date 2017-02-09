@@ -86,12 +86,17 @@ package org.moon
 			NameList.add(MoonConst.MODEL_PROGRESS,MoonConst.PROGRESS_BACKGROUND,	BasicUI.getBitmapData(BasicUI.getRoundRect(100,18,COLOR_TIPS_BG)));
 			
 			//checkbox 复选框
-			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,0)));
-			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_SELECT,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,1)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT_0,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_UP,0,0)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_OVER_0,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,0)));
+			NameList.add(MoonConst.MODEL_CHECKBOX, MoonConst.CHECKBOX_SELECT_0,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_DOWN, 0, 0)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_DEFAULT_1,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_UP,0,1)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_OVER_1,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_OVER,0,1)));
+			NameList.add(MoonConst.MODEL_CHECKBOX,MoonConst.CHECKBOX_SELECT_1,	BasicUI.getBitmapData(BasicUI.getCheckBoxRect(COLOR_BUTTON_DOWN,0,1)));
 			
 			//radio 单选框
-			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_DEFAULT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,0)));
-			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_SELECT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,1)));
+			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_DEFAULT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_UP,0,0)));
+			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_OVER,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_OVER,0,0)));
+			NameList.add(MoonConst.MODEL_RADIO,MoonConst.RADIO_SELECT,	BasicUI.getBitmapData(BasicUI.getRadioCircle(COLOR_BUTTON_DOWN,0,1)));
 			
 			//slider 滑块条
 			NameList.add(MoonConst.MODEL_SLIDER,MoonConst.SLIDER_BAR_UP,		BasicUI.getBitmapData(BasicUI.getRoundRect(8,14,COLOR_SCROLL_BAR_UP)));

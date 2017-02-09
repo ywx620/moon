@@ -3,6 +3,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import org.moon.MoonMain
+	import org.moon.MoonTheme;
 	/**
 	 * ...
 	 * @author vinson
@@ -20,6 +21,7 @@ package
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			new MoonTheme
 			this.addChild(new MoonMain)
 			// entry point
 		}

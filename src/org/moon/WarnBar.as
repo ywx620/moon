@@ -5,6 +5,7 @@ package org.moon
 	
 	import org.moon.basic.BasicBar;
 	import org.moon.basic.BasicButton;
+	import org.moon.basic.BasicLabel;
 	import org.moon.event.MoonEvent;
 	import org.moon.utils.MoonConst;
 	import org.moon.utils.NameList;
@@ -31,7 +32,7 @@ package org.moon
 		/**初始化皮肤*/
 		private function initSkin():void
 		{
-			text=new TextField;
+			text=(new BasicLabel).textField;
 			buttonCancel=new BasicButton;
 			buttonSure=new BasicButton;
 			buttonDic[CANCEL]=buttonCancel;

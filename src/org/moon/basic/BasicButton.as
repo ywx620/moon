@@ -4,6 +4,7 @@ package org.moon.basic
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	import flash.filters.ColorMatrixFilter;
+	import flash.geom.Point;
 	
 	import org.moon.event.MoonEvent;
 	import org.moon.utils.MoonConst;
@@ -104,7 +105,7 @@ package org.moon.basic
 				}
 			}
 		}
-		private function autoLabelSeat():void
+		public function autoLabelSeat():void
 		{
 			if(basicLabel!=null){
 				if(dataSkin[MoonConst.BUTTON_UP]){
@@ -186,7 +187,6 @@ package org.moon.basic
 		{
 			return _label;
 		}
-		
 		public function set label(value:String):void
 		{
 			if(basicLabel==null){
@@ -201,6 +201,22 @@ package org.moon.basic
 		{
 			if(x!=0) basicLabel.x=x;
 			if(y!=0) basicLabel.y=y;
+		}
+		public function getLabelWH():Point
+		{
+			return new Point(basicLabel.width,basicLabel.height);
+		}
+		
+		public function createTextField(str:String,size:int=14,color:uint=0XFFFFFF,isGlowFilter:Boolean=true,glowColor:uint=0):void
+		{
+			if(basicLabel){
+				this.removeChild(basicLabel);
+				basicLabel=null;
+			}
+			basicLabel=new BasicLabel;
+			basicLabel.createTextField(size,color,isGlowFilter,glowColor);
+			basicLabel.text=str;
+			this.addChild(basicLabel);
 		}
 		
 		override public function set width(value:Number):void

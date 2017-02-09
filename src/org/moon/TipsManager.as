@@ -31,6 +31,7 @@ package org.moon
 		public static function green(str:String):String{return "<font color='#00ff00'>"+str+"</font>";}
 		public static function bule(str:String):String{return "<font color='#000ff'>"+str+"</font>";}
 		public static function yellow(str:String):String{return "<font color='#ffff00'>"+str+"</font>";}
+		public static function line(str:String,size:int=0):String{return "<textformat leading='"+size+"'>"+str+"</textformat>";}//行间距离
 		public function removeTips():void
 		{
 			if(host) host.stage.removeEventListener(MouseEvent.MOUSE_MOVE,onFollowMouse);

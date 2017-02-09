@@ -35,7 +35,7 @@ package org.moon
 		private var timebar:TimeBar;
 		public function MoonMain()
 		{
-			new MoonTheme;
+			//new MoonTheme;
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 		}

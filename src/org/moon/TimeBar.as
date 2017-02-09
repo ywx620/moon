@@ -3,7 +3,6 @@ package org.moon
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import org.moon.basic.BasicBar;
-	import org.moon.utils.Unify;
 	import org.moon.utils.MoonConst;
 	import org.moon.utils.NameList;
 	/**
@@ -48,7 +47,7 @@ package org.moon
 		public function set number(value:Number):void
 		{
 			_number = value;
-			var array:Array = Unify.getTimeArray(value);
+			var array:Array = getTimeArray(value);
 			switch(type) {
 				case HMS:
 					break;
@@ -82,6 +81,29 @@ package org.moon
 					w += colon.width+2;
 				}
 			}
+		}
+		private function getTimeArray(str:*):Array
+		{
+			var value:int=getTimeNumber(str);
+			if(value<=0) return [];
+			var day:int=int(value/(24*60*60));
+			var hours:int=int((value-(day*24*60*60))/3600);
+			var minute:int=int((value-(day*24*60*60)-(hours*3600))/60);
+			var second:int=int((value-(day*24*60*60)-(hours*3600)-minute*60));
+			return [hours, minute, second];
+		}
+		private function getTimeNumber(str:*):int
+		{
+			var array:Array=String(str).split("-")
+			if(array.length==2){
+				str=array[0]+" "+array[1];
+			}else if(array.length==3){
+				str=array[0]+"/"+array[1]+"/"+array[2];
+			}
+			var currentData:Date=new Date();
+			var endDate:Date=new Date(str);
+			var value:int=(endDate.getTime()-currentData.getTime())/1000;
+			return value
 		}
 	}
 }

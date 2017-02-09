@@ -151,12 +151,12 @@ package org.moon
 			return returnArr
 		}
 		/**设置间隔*/
-		public function get gad():int
+		override public function get gad():int
 		{
 			return _gad;
 		}
 		
-		public function set gad(value:int):void
+		override public function set gad(value:int):void
 		{
 			_gad = value;
 		}

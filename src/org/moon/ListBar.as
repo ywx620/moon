@@ -8,6 +8,7 @@ package org.moon
 	
 	import org.moon.basic.BasicBar;
 	import org.moon.basic.BasicButton;
+	import org.moon.basic.BasicLabel;
 	import org.moon.event.MoonEvent;
 	import org.moon.utils.MoonConst;
 	import org.moon.utils.NameList;
@@ -32,7 +33,7 @@ package org.moon
 		/**初始化皮肤*/
 		private function initSkin():void
 		{
-			_openText=new TextField;
+			_openText=(new BasicLabel).textField;
 			_openText.autoSize="left";
 			openButton=new BasicButton;
 			buttonDic["open"] = openButton;

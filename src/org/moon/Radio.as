@@ -10,10 +10,10 @@ package org.moon
 		public function Radio()
 		{
 			myTypeDefault=MoonConst.RADIO_DEFAULT;
+			myTypeOver=MoonConst.RADIO_OVER;
 			myTypeSelect=MoonConst.RADIO_SELECT;
 			myModel=MoonConst.MODEL_RADIO;
 		}
-		
 		override public function setStatc():void
 		{
 			if(_index==0){

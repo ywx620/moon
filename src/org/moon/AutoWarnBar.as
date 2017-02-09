@@ -7,10 +7,12 @@ package org.moon
 	
 	import org.moon.basic.BasicBar;
 	import org.moon.basic.BasicButton;
+	import org.moon.basic.BasicLabel;
 	import org.moon.event.MoonEvent;
 	import org.moon.utils.MoonConst;
 	import org.moon.utils.NameList;
 	import org.moon.utils.Scale9Image;
+
 	/**
 	 * ...提醒完后自动关闭
 	 * @author vinson
@@ -31,7 +33,7 @@ package org.moon
 		/**初始化皮肤*/
 		private function initSkin():void
 		{
-			text=new TextField;
+			text=(new BasicLabel).textField;
 			timeText = new TextField;
 			text.autoSize="center";
 			timeText.autoSize="center";

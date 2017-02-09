@@ -95,17 +95,24 @@ package org.moon.utils
 		/**progress 中间的身体*/
 		public static const PROGRESS_BAR:String="progress-bar";
 		
-		/**checkbox*/
-		public static const MODEL_CHECKBOX:String="model-checkbox";
+		/**checkbox 0没有打钩，1是打钩*/
+		public static const MODEL_CHECKBOX:String = "model-checkbox";
 		/**checkbox 复选框默认状态*/
-		public static const CHECKBOX_DEFAULT:String="checkbox-default";
+		public static const CHECKBOX_DEFAULT_0:String = "checkbox-default-0";
+		public static const CHECKBOX_DEFAULT_1:String = "checkbox-default-1";
+		/**checkbox 复选框鼠标划上*/
+		public static const CHECKBOX_OVER_0:String = "checkbox-over-0";
+		public static const CHECKBOX_OVER_1:String="checkbox-over-1";
 		/**checkbox 复选框选中的状态*/
-		public static const CHECKBOX_SELECT:String="checkbox-select";
+		public static const CHECKBOX_SELECT_0:String="checkbox-select-0";
+		public static const CHECKBOX_SELECT_1:String="checkbox-select-1";
 		
 		/**radio*/
 		public static const MODEL_RADIO:String="model-radio";
 		/**radio 单选框默认状态*/
-		public static const RADIO_DEFAULT:String="radio-default";
+		public static const RADIO_DEFAULT:String = "radio-default";
+		/**radio 单选框鼠标划过状态*/
+		public static const RADIO_OVER:String="radio-over";
 		/**radio 单选框选中的状态*/
 		public static const RADIO_SELECT:String="radio-select";
 		

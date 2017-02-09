@@ -3,6 +3,7 @@ package org.moon
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
 	import org.moon.basic.BasicBar;
@@ -77,8 +78,9 @@ package org.moon
 				progress.mask=maskQuad;
 				this.addChild(maskQuad);
 				bar.x=value*totalLength;
-				bar.label=int(value*100).toString();
-				bar.setLabelSeat(-4,-15);
+				bar.label=int(value*50).toString();
+				var point:Point=bar.getLabelWH();
+				bar.setLabelSeat(point.x/-2,-1*point.y);
 				bar.newAddEventListener(MoonEvent.MOUSE_DOWN,onStart);
 			}
 		}
